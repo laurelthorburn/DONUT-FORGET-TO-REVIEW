@@ -29,7 +29,7 @@ const sess = {
 
 app.use(session(sess));
 
-const hbs = exphbs.create({ helpers }); //this tells it to go to layout/main - automatically
+const hbs = exphbs.create({}); //this tells it to go to layout/main - automatically
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
