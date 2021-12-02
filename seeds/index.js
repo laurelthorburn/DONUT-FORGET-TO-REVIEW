@@ -1,6 +1,6 @@
 const sequelize = require('../config/connection');
 
-const seedUser = require('./userData');
+const seedUser = require('./userSeedData');
 const seedPost = require('./postSeedData');
 
 const seedAll = async () => {
