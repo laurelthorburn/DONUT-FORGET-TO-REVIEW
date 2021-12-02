@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS donut_db;
+
+CREATE DATABASE donut_db;
