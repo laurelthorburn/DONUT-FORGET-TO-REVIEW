@@ -100,7 +100,7 @@ router.get("/newPost", async (req, res) => {
     res.redirect("/");
     return;
   }
-  
+
   try {
 
       // Pass serialized data and session flag into template
@@ -122,6 +122,47 @@ router.get("/login", (req, res) => {
     return;
   }
   res.render("login");
+});
+
+// GET a single post
+router.get("/:id", async (req, res) => {
+
+  if (!req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
+  try {
+
+    const dbPostData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: Comment,
+          attributes: ["comment_content", "createdAt"],
+          include: {
+            model: User,
+            attributes: ["username"],
+          },
+        },
+        { model: User, attributes: ["username"] },
+      ],
+    });
+
+    const post = dbPostData.get({ plain: true });
+
+    req.session.post_id = post.id;
+
+    console.log("I AM THE POST ID... I HOPE",
+    req.session.post_id) // works
+    
+    res.render("post", {
+      post,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
