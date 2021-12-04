@@ -4,6 +4,7 @@ const { User, Post, Comment } = require("./../models");
 // -------------------------------------------------------------
 
 // GET initial page (this is our login page and sample site page)
+
 router.get("/", async (req, res) => {
   try {
 
@@ -35,6 +36,7 @@ router.get("/", async (req, res) => {
 
 // GET all posts
 router.get("/dashboard", async (req, res) => {
+
   try {
 
     // Get all Posts and JOIN with User data
