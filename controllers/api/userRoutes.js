@@ -24,12 +24,18 @@ router.post('/', async (req, res) => {
 
 // Login
 router.post('/login', async (req, res) => {
+
+  console.log("do we make it to here??",
+  "===============================")
+
   try {
     const dbUserData = await User.findOne({
       where: {
         username: req.body.username,
       },
     });
+
+    console.log(dbUserData)
 
     if (!dbUserData) {
       res
@@ -49,7 +55,6 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
       req.session.username = dbUserData.username;
       req.session.user_id = dbUserData.id;
 

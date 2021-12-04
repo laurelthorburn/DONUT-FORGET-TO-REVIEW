@@ -7,7 +7,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sequelize = require('./config/connection');
 // Import the custom helper methods
-// const helpers = require('./utils/helpers'); //this code doesn't exist yet so leave him coded out for now
+const helpers = require('./utils/helpers'); //this code doesn't exist yet so leave him coded out for now
 
 const app = express();
 const PORT = process.env.PORT || 3001;

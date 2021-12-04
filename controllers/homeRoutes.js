@@ -1,13 +1,12 @@
 const router = require("express").Router();
-const { User, Post } = require("./../models");
+const { User, Post, Comment } = require("./../models");
 
 // -------------------------------------------------------------
 
-// GET initial page
+// GET initial page (this is our login page and sample site page)
+
 router.get("/", async (req, res) => {
-  console.log("Did you make it to me?? 1");
   try {
-    console.log("Did you make it to me?? 2");
 
     // Get all Posts and JOIN with User data
     const dbPostData = await Post.findAll({
@@ -18,7 +17,6 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-    console.log("Did you make it to me?? 3");
 
       // Serialize data so the template can read it -- else you get a mass of information that is overwhelming and difficult to work with
     const posts = dbPostData.map((post) => post.get({ plain: true }));
@@ -38,9 +36,8 @@ router.get("/", async (req, res) => {
 
 // GET all posts
 router.get("/dashboard", async (req, res) => {
-  console.log("Did you make it to me?? 1");
+
   try {
-    console.log("Did you make it to me?? 2");
 
     // Get all Posts and JOIN with User data
     const dbPostData = await Post.findAll({
@@ -51,7 +48,6 @@ router.get("/dashboard", async (req, res) => {
         },
       ],
     });
-    console.log("Did you make it to me?? 3");
 
       // Serialize data so the template can read it -- else you get a mass of information that is overwhelming and difficult to work with
     const posts = dbPostData.map((post) => post.get({ plain: true }));
@@ -71,8 +67,11 @@ router.get("/dashboard", async (req, res) => {
 // ------------------------------------------------------------
 // Login route
 router.get("/login", (req, res) => {
+
+  console.log(req.session)
+  
   if (req.session.loggedIn) {
-    res.redirect("/");
+    res.redirect("/dashboard");
     return;
   }
   res.render("login");
