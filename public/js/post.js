@@ -16,7 +16,7 @@ const newFormHandler = async (event) => {
      });
  
      if (response.ok) {
-       document.location.replace('/dashboard');
+       document.location.replace('/profile');
      } else {
        alert('Failed to create post');
      }
@@ -34,7 +34,7 @@ const newFormHandler = async (event) => {
      });
  
      if (response.ok) {
-       document.location.replace('/dashboard');
+       document.location.replace('/profile');
      } else {
        alert('Failed to delete post');
      }
@@ -81,7 +81,7 @@ const post_title = document.querySelector('#recipient-name').value;
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/profile');
     } else {
       alert('Failed to send final post update');
     }
