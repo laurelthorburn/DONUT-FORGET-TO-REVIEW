@@ -13,6 +13,7 @@ const loginFormHandler = async (event) => {
       });
   
       if (response) { //response.ok isn't currently working  -Laurel 12/4/21 11;28AM
+
         document.location.replace('/dashboard');
       } else {
         alert('Failed to log in. Bummer!');
@@ -34,6 +35,7 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
+
         document.location.replace('/dashboard');
       } else {
         alert('Failed to sign up. ');
