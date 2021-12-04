@@ -6,6 +6,10 @@ const { User, Post, Comment } = require("./../models");
 // GET initial page (this is our login page and sample site page)
 
 router.get("/", async (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/dashboard");
+    return;
+  }
   try {
 
     // Get all Posts and JOIN with User data
@@ -36,6 +40,10 @@ router.get("/", async (req, res) => {
 
 // GET all posts
 router.get("/dashboard", async (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
 
   try {
 
@@ -58,6 +66,45 @@ router.get("/dashboard", async (req, res) => {
       username: req.session.username,
       user_id: req.session.user_id,
       loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+// -------------------------------------------------------------
+
+// GET aboutUs page
+
+router.get("/aboutUs", async (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
+  try {
+
+      // Pass serialized data and session flag into template
+    res.render("aboutUs", {
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// -------------------------------------------------------------
+
+// GET newPost page 
+
+router.get("/newPost", async (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  
+  try {
+
+      // Pass serialized data and session flag into template
+    res.render("newPost", {
     });
   } catch (err) {
     res.status(500).json(err);
