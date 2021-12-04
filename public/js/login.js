@@ -13,7 +13,7 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/dashboard');
       } else {
         alert('Failed to log in. Bummer!');
       }
@@ -33,10 +33,10 @@ const loginFormHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
   
-      if (response.ok) {
-        document.location.replace('/');
+      if (response) {
+        document.location.replace('/dashboard');
       } else {
-        alert('Failed to sign up. Double bummer dude!');
+        alert('Failed to sign up. ');
       }
     }
   };
