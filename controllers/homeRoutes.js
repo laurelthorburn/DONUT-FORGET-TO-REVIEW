@@ -85,6 +85,9 @@ router.get("/aboutUs", async (req, res) => {
 
       // Pass serialized data and session flag into template
     res.render("aboutUs", {
+      username: req.session.username,
+      user_id: req.session.user_id,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -105,12 +108,47 @@ router.get("/newPost", async (req, res) => {
 
       // Pass serialized data and session flag into template
     res.render("newPost", {
+      username: req.session.username,
+      user_id: req.session.user_id,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+
+
+//Get Profile page from User ( get all the user post)
+
+
+router.get("/profile", async (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
+  try {
+    
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, 
+      {
+      attributes: { exclude: ['password'] },
+      include: 
+      [{ model: Post }],
+    });
+
+    const user = userData.get({ plain: true });
+
+      // Pass serialized data and session flag into template
+    res.render("profile", {
+      ...user,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 // ------------------------------------------------------------
 // Login route
 router.get("/login", (req, res) => {
