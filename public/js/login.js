@@ -12,7 +12,7 @@ const loginFormHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
   
-      if (response) {
+      if (response) { //response.ok isn't currently working  -Laurel 12/4/21 11;28AM
         document.location.replace('/dashboard');
       } else {
         alert('Failed to log in. Bummer!');
