@@ -1,7 +1,7 @@
 
 html, body {
     height: 100%;
-    background-color: rosybrown;
+    background-color: #FAFAFA;
 }
 
 .row h-100 {
@@ -13,15 +13,3 @@ html, body {
     margin-bottom: auto;
 }
 
-#bground {
-    background-color: red;
-}
-#secondbground {
-    background-color: orange;
-}
-#thirdbground {
-    background-color: blue;
-}
-#fourthbground {
-    background-color: purple;
-}

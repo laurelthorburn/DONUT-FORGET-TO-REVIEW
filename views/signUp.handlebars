@@ -1,1 +1,68 @@
-eventually will allow the user to signup
+{{!-- This page is the first displayed when the user enters our site, it contains sample card to the left with changing pictures and the login card to the right, we can provide a link for user to sign up that takes them else where --}}
+
+{{!-- Vertical Center Using Auto Margins --}}
+
+<div class="row h-100">
+   <div class="col-sm-12 my-auto">
+      <div class="row d-flex justify-content-center">
+        
+  <div class="col-sm-3 mt-3">
+  
+    <div class="card">
+      <div class="card-body">
+          <div class="login-card">
+    <h2 class="page-title">Login</h2>
+    <form class="form login-form">
+      <div class="form-group">
+        <label for="username-login">Username:</label>
+        <input class="form-input" type="text" id="username-login" />
+      </div>
+      <div class="form-group">
+        <label for="password-login">Password:</label>
+        <input class="form-input" type="password" id="password-login" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-info" type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3 mt-3">
+    <div class="card">
+      <div class="card-body">
+  <div class="login-card">
+    <h2 class="page-title">Sign up</h2>
+    <form class="form signup-form">
+      <div class="form-group">
+        <label for="username-signup">Username:</label>
+        <input class="form-input" type="text" id="username-signup" />
+      </div>
+      <div class="form-group">
+        <label for="password-signup">Password:</label>
+        <input class="form-input" type="password" id="password-signup" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-info" type="submit">Sign up</button>
+      </div>
+    </form>
+  </div>
+          <a class="btn btn-info" href="/">Login</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+   </div>
+</div>
+
+
+
+
+{{!-- loggin and loggot card --}}
+
+
+<script src="/js/login.js"></script>
