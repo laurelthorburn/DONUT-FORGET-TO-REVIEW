@@ -118,9 +118,8 @@ router.get("/newPost", async (req, res) => {
 });
 
 
-
+// ------------------------------------------------------------
 //Get Profile page from User ( get all the user post)
-
 
 router.get("/profile", async (req, res) => {
   if (!req.session.loggedIn) {
@@ -144,6 +143,24 @@ router.get("/profile", async (req, res) => {
     res.render("profile", {
       ...user,
       loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// ------------------------------------------------------------
+//Get signUp page -- only allow signed out user's to sign up
+
+router.get("/signUp", async (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/dashboard");
+    return;
+  }
+
+  try {
+        res.render("signUp", {
+
     });
   } catch (err) {
     res.status(500).json(err);
