@@ -24,7 +24,9 @@ Donut review site. Coming soon... donut be impatient.
 <a name="usersection"></a>
 ## User Story
 ```
-
+AS A donut lover,
+I WANT a site where I can share my love for donuts with other donut enthusiasts by sharing reviews and photos, and filter through existing posts,
+SO THAT I can grow my donut community.
 ```
 
 <a name="acceptancesection"></a>
@@ -45,7 +47,7 @@ git clone https://github.com/laurelthorburn/DONUT-FORGET-TO-REVIEW.git
 ```
 npm init
 ```
-* Install dependencies (bcrypt, connection-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, and sequelize) by opening the terminal (ctrl + j on windows) and running:
+* Install dependencies (bcrypt, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, and sequelize) by opening the terminal (ctrl + j on windows) and running:
 ```
 npm install
 ```
