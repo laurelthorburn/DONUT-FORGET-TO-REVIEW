@@ -42,6 +42,13 @@ const loginFormHandler = async (event) => {
       }
     }
   };
+
+    // if(document.getElementById('username-login').value === "" && document.getElementById('password-login').value === "") {
+    //   //  document.getElementById('submit-btn').removeAttribute('disabled');
+    //    document.getElementById('submit-btn').setAttribute('disabled');
+    //   // document.getElementById('submit-btn').disabled = false;
+    // };
+    
   
   
   document
