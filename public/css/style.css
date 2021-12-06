@@ -55,6 +55,11 @@ img {
   animation-duration: 1.5s;
 }
 
+.smaller-img {
+  height: 275px;
+  width: 275px;
+}
+
 @-webkit-keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
