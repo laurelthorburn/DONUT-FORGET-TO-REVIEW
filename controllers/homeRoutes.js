@@ -183,6 +183,42 @@ router.get("/signUp", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// ------------------------------------------------------------
+//Get signUp page -- only allow signed out user's to sign up
+
+router.get("/favorites", async (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/dashboard");
+    return;
+  }
+  try {
+
+    // Get all Posts and JOIN with User data
+    const dbPostData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+
+      // Serialize data so the template can read it -- else you get a mass of information that is overwhelming and difficult to work with
+    const posts = dbPostData.map((post) => post.get({ plain: true }));
+
+      // Pass serialized data and session flag into template
+    res.render("favorites", {
+      posts,
+      username: req.session.username,
+      user_id: req.session.user_id,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // ------------------------------------------------------------
 // Login route
 router.get("/login", (req, res) => {
