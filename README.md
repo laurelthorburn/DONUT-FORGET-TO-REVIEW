@@ -51,7 +51,7 @@ npm install
 ```
 OR each of the following:
 ```
-npm install bcrypt || npm install connection-session-sequelize ||  npm install dotenv || npm install || express npm install express-session || npm install express-handlebars || npm install mysql2 || npm install sequelize
+npm install bcrypt || npm install connect-session-sequelize ||  npm install dotenv || npm install express || npm install express-handlebars || npm install express-session || npm install mysql2 || npm install sequelize
 ```
 
 <a name="usagesection"></a>
