@@ -24,7 +24,9 @@ Donut review site. Coming soon... donut be impatient.
 <a name="usersection"></a>
 ## User Story
 ```
-
+AS A donut lover,
+I WANT an app where I can share my love for donuts with other donut enthusiasts by sharing reviews and photos, and filter through existing posts,
+SO THAT I can grow my donut community.
 ```
 
 <a name="acceptancesection"></a>
