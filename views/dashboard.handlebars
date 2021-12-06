@@ -10,18 +10,30 @@ Another option is that this could be a modal instead of it's own route (slightly
 
 
 <div class="container">
-   <div class="card-columns d-flex justify-content-center">
+   <div class="card-columns">
 
 {{#each posts as |post|}}
-<div class="card">
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{post.post_title}}</h5>
-    <p> FUTURE IMAGE DISPLAYED HERE</p>
-    <p>Author: {{ post.user.username}} Date: {{format_date post.createdAt}}</p>
-    <p class="card-text">{{post.post_content}}</p>
+    <p class="card-text">
+Author: {{ post.user.username}} Date: {{format_date post.createdAt}}<br>
+    {{post.post_content}}
+
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Overall Score: </li>
+    <li class="list-group-item">Rating: </li>
+    <li class="list-group-item">Location: </li>
+  </ul>
+  <div class="card-body">
     <a href="/{{id}}" class="btn btn-light">View Discussion</a>
   </div>
 </div>
+
 {{/each}}
 
 </div>
