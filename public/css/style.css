@@ -201,7 +201,7 @@ footer{
   height: 25px;
   border-radius: 50%; 
   border: 0;
-  background: pink;
+  background: rgb(204, 74, 95);
   cursor: pointer;
 }
 
@@ -210,6 +210,6 @@ footer{
   height: 25px;
   border-radius: 50%;
   border: 0;
-  background: pink;
+  background: rgb(204, 74, 95);
   cursor: pointer;
 }

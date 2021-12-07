@@ -54,30 +54,31 @@ Another option is that this could be a modal instead of it's own route (slightly
         </button>
       </div>
       <div class="modal-body">
-        <form>
+
+    <form class="form">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Title:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <input type="text" class="form-control" id="post-name">
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Caption:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <textarea class="form-control" id="post-desc"></textarea>
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Rating:</label>
-      <div class="slidecontainer">
+      {{!-- <div class="slidecontainer">
   <input type="range" min="1" max="5" value="5" class="slider" id="myRange">
   <p>Value: <span id="demo"></span></p>
-</div>
+</div> --}}
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Regret Review</button>
-        <button type="button" class="btn btn-primary" id="update-button" data-put="">Upload Review</button>
+        <button type="button" class="btn btn-primary" id="upload-btn">Upload Review</button>
       </div>
     </div>
   </div>
 </div> 
 
-<script src="./js/post.js"></script>
+<script src="./js/reviewmodal.js"></script>
