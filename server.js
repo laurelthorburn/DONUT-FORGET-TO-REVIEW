@@ -43,3 +43,36 @@ app.use(require('./controllers/'));
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+
+
+// Cloudinary Server
+
+const http = require('http');
+const util = require('util');
+
+const Formidable = require('formidable');
+
+http.createServer((req, res) => {
+  if (req.url === '/upload' && req.method.toLowerCase() === 'post') {
+
+    //parse a picture upload
+    // const form = new Formidable();
+
+    //image we uploaded
+    form.parse(req, (err, fields, files) => {
+      res.writeHead(200, { 'content type': 'text/plain' });
+      res.write('received upload: \n\n');
+      res.end(util.inspect({ fields: fields, files: files }));
+    });
+    return;
+  }
+  res.writeHead(200, { 'content-type': 'text/html' });
+  res.end(`
+  <div style= "display:flex;justify-content:center; align-items:center; width:100%, height: 100%">
+  <form action="/upload" enctype="multipart/form-data" method="post">
+    <input type="file" name="upload" multiple="multiple" /><br/><br/>
+    input type="submit" value"upload"/>
+    </form>
+    </div>
+    `);
+}).listen(5000);
