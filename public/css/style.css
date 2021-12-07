@@ -77,10 +77,6 @@ footer{
   to {opacity: 1}
 }
 
-a {
-  text-decoration: none;
-  color: #FFFFFF;
-}
 
 /* CSS */
 .button-1 {
@@ -113,4 +109,6 @@ a {
 .button-1:hover,
 .button-1:focus {
   background-color: #F082AC;
+  text-decoration: none;
+  color: #FFFFFF;
 }
