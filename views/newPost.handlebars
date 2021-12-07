@@ -1,60 +1,61 @@
 <div class="menu-container">
-why doesn't username work? <br>
-Need to add img slot for user to upload img using cloudinary
+  why doesn't username work? <br>
+  Need to add img slot for user to upload img using cloudinary
 
-    <h2>Create a new post, {{username}}!</h2>
+  <h2>Create a new post, {{username}}!</h2>
 
-<div class="row mx-auto mt-3">
-  <div class="col-md-5 ml-5 mr-5 card">
-    <h3>Create a New Post:</h3>
+  <div class="row mx-auto mt-3">
+    <div class="col-md-5 ml-5 mr-5 card">
+      <h3>Create a New Post:</h3>
 
-    <form class="form new-post-form">
-      <div class="form-group">
-        <label for="post-name">post name:</label>
-
-        
-        <input class="form-input" type="text" id="post-name" name="post-name" />
-      </div>
+      <form class="form new-post-form">
+        <div class="form-group">
+          <label for="post-name">post name:</label>
 
 
-
-      
-      <div class="form-group">
-        <label for="post-desc">description:</label>
-        <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
-      </div>
+          <input class="form-input" type="text" id="post-name" name="post-name" />
+        </div>
 
 
-      
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
-
-  
 
 
-  <button id="upload_widget" class="cloudinary-button">Upload files</button>
+        <div class="form-group">
+          <label for="post-desc">description:</label>
+          <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
+        </div>
 
-{{!-- Include the cloudinary widget JavaScript file in your web page:
+
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </form>
+    </div>
+
+
+
+
+    <button id="upload_widget" class="cloudinary-button">Upload files</button>
+
+    {{!-- Include the cloudinary widget JavaScript file in your web page:
  --}}
-<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 
-<script type="text/javascript">  
-var myWidget = cloudinary.createUploadWidget({
-  cloudName: 'my_cloud_name', 
-  uploadPreset: 'my_preset'}, (error, result) => { 
-    if (!error && result && result.event === "success") { 
-      console.log('Done! Here is the image info: ', result.info); 
-    }
-  }
-)
+    <script type="text/javascript">
+      var myWidget = cloudinary.createUploadWidget({
+        cloudName: 'my_cloud_name',
+        uploadPreset: 'my_preset'
+      }, (error, result) => {
+        if (!error && result && result.event === "success") {
+          console.log('Done! Here is the image info: ', result.info);
+        }
+      }
+      )
 
-document.getElementById("upload_widget").addEventListener("click", function(){
-    myWidget.open();
-  }, false);
-</script>
+      document.getElementById("upload_widget").addEventListener("click", function () {
+        myWidget.open();
+      }, false);
+    </script>
 
 
-<script src="./js/post.js"></script>
+    <script src="./js/post.js"></script>
