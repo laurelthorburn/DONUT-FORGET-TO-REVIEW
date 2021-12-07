@@ -60,6 +60,13 @@ img {
   width: 275px;
 }
 
+footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  background-color: blue;
+ }
+
 @-webkit-keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
