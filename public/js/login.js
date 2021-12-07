@@ -43,11 +43,34 @@ const loginFormHandler = async (event) => {
     }
   };
 
-    // if(document.getElementById('username-login').value === "" && document.getElementById('password-login').value === "") {
-    //   //  document.getElementById('submit-btn').removeAttribute('disabled');
-    //    document.getElementById('submit-btn').setAttribute('disabled');
-    //   // document.getElementById('submit-btn').disabled = false;
-    // };
+
+
+  function checkForm()
+  {
+      var name = document.getElementById('username-login').value === "" && document.getElementById('password-login').value
+      var cansubmit = (name.length > 0);
+      document.getElementById("submit-btn").disabled = !cansubmit;
+  
+  };
+
+
+  // $(function(){
+  //   $("#username-login, #password-login").bind("change keyup",
+  //   function(){
+  //      if($("#username-login,").val() != "" && $("#password-login").val() != "")
+  //         $(this).closest("form").find(":submit").removeAttr("disabled");
+  //      else
+  //         $(this).closest("form").find(":submit").attr("disabled","disabled"); 
+  //   });
+  // });
+  
+  
+  
+  // if(document.getElementById('username-login').value === "" && document.getElementById('password-login').value === "") {
+  //     //  document.getElementById('submit-btn').removeAttribute('disabled');
+  //      document.getElementById('submit-btn').setAttribute('disabled');
+  //     // document.getElementById('submit-btn').disabled = false;
+  //   };
     
   
   

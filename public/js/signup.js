@@ -20,7 +20,16 @@
       }
     }
   };
-
+//jquery
+  // $(function (){
+  //   $("#username-signup, #password-signup").bind("change keyup",
+  //   function(){
+  //      if($("#username-signup").val() != "" && $("#password-signup").val() != "")
+  //         $(this).closest("form").find(":submit").removeAttr("disabled");
+  //      else
+  //         $(this).closest("form").find(":submit").attr("disabled","disabled"); 
+  //   });
+  // });
   
   document
     .querySelector('.signup-form')
