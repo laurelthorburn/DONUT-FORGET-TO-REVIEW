@@ -20,17 +20,22 @@
       }
     }
   };
-//jquery
-  // $(function (){
-  //   $("#username-signup, #password-signup").bind("change keyup",
-  //   function(){
-  //      if($("#username-signup").val() != "" && $("#password-signup").val() != "")
-  //         $(this).closest("form").find(":submit").removeAttr("disabled");
-  //      else
-  //         $(this).closest("form").find(":submit").attr("disabled","disabled"); 
-  //   });
-  // });
+
+  function checkForm()
+  {
+      var name = document.getElementById('username-signup').value       
+      var cansubmit = (name.length > 0);
+      
+      var password = document.getElementById('password-signup').value
+      var cansubmit = (password.length > 0);
+      
+      document.getElementById("submit-btn").disabled = !cansubmit;
+
+  };
   
-  document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);
+ 
+
+  
+ document
+  .querySelector('.signup-form')
+   .addEventListener('submit', signupFormHandler);
