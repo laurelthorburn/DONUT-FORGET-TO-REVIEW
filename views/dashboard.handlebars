@@ -17,15 +17,11 @@ Author: {{ post.user.username}} Date: {{format_date post.createdAt}}<br>
     {{post.post_content}}
 
     </p>
+    <p>Rating: {{post.rating}}/5</p>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Overall Score: </li>
-    <li class="list-group-item">Rating: </li>
-    <li class="list-group-item">Location: </li>
-  </ul>
   <div class="card-body">
 
-    <a href="/{{id}}" class="button-1 btn-link" role="button">View Discussion</a>
+    <a href="/{{id}}" class="button-1 btn-link btn-block" role="button">View Discussion</a>
   </div>
 </div>
 
@@ -36,8 +32,49 @@ Author: {{ post.user.username}} Date: {{format_date post.createdAt}}<br>
 
 <footer>
 
-let the user add a post -- this could be a cool footer that stays on page no matter the amount of posts<br>
-Another option is that this could be a modal instead of it's own route (slightly more complicated)<br>
+{{!-- let the user add a post -- this could be a cool footer that stays on page no matter the amount of posts<br>
+Another option is that this could be a modal instead of it's own route (slightly more complicated)<br> --}}
 
-    <a href="/newPost" class="btn btn-light">Add Post</a>
+<button class="button-64" role="button" data-toggle="modal" data-target="#newPostModal"><span class="text">+ Add Review</span></button>
+
 </footer>
+
+{{!-- MODAL BELOW --}}
+<div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newPostModalLabel">Create a New Review</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+    <form class="form">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Title:</label>
+            <input type="text" class="form-control" id="post-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Caption:</label>
+            <textarea class="form-control" id="post-desc"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Rating:</label>
+      <div class="slidecontainer">
+  <input type="range" min="1" max="5" value="5" class="slider" id="myRange">
+  <p>Value: <span id="demo"></span></p>
+</div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Regret Review</button>
+        <button type="button" class="btn btn-primary" id="upload-btn">Upload Review</button>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<script src="./js/reviewmodal.js"></script>

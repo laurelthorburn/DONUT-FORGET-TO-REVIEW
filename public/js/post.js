@@ -23,6 +23,8 @@ const newFormHandler = async (event) => {
    }
  };
  
+
+
  const delButtonHandler = async (event) => {
    if (event.target.hasAttribute('data-id')) {
      const id = event.target.getAttribute('data-id');
@@ -41,6 +43,8 @@ const newFormHandler = async (event) => {
    }
  };
 
+
+
 const updateButtonHandler = async (event) => {
   // event.preventDefault();
   if (event.target.hasAttribute('data-update')) {
@@ -53,8 +57,6 @@ const updateButtonHandler = async (event) => {
 
   const postResponse = await response.json(); //converts to readable data
 
-console.log("YOOOOOOOOOO==============",
-postResponse.post_content);
 
 document.querySelector('#message-text').value = postResponse.post_content;
 document.querySelector('#recipient-name').value = postResponse.post_title;
@@ -65,9 +67,6 @@ document.querySelector('#recipient-name').value = postResponse.post_title;
 
 const sendUpdateButton = async (event) => {
   if (event.target.hasAttribute('data-put')) {
-console.log("WHERE AM I??? ID????",
-postID) //works
-
 
 const post_content = document.querySelector('#message-text').value;
 const post_title = document.querySelector('#recipient-name').value;
@@ -87,6 +86,7 @@ const post_title = document.querySelector('#recipient-name').value;
     }
   }
 };
+
  
  document
    .querySelector('.new-post-form')
@@ -103,4 +103,3 @@ const post_title = document.querySelector('#recipient-name').value;
  document
    .querySelector('#update-button')
    .addEventListener('click', sendUpdateButton);
- 
