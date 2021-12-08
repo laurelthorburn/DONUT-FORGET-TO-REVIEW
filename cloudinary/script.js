@@ -10,4 +10,10 @@ window.addEventListener("load", function () {
             img.src = URL.createObjectURL(e.target.files[0]);
         }
     })
+    document.querySelector("#upload").addEventListener('submit', function (event) {
+        event.preventDefault()
+        ///grab image data and send using fetch request front end to back end 
+    })
 })
+
+//move to public eventually !
