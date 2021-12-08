@@ -47,14 +47,14 @@
     <form class="form login-form">
       <div class="form-group">
         {{!-- <label for="username-login">Username:</label> --}}
-        <input class="form-input" type="text" id="username-login" placeholder="Username"/>
+        <input class="form-input" type="text" id="username-login"  onkeyup="checkForm()" placeholder="Username"/>
       </div>
       <div class="form-group">
         {{!-- <label for="password-login">Password:</label> --}}
-        <input class="form-input" type="password" id="password-login" placeholder="Password" />
+        <input class="form-input" type="password" id="password-login"  onkeyup="checkForm()"placeholder="Password" />
       </div>
       <div class="form-group">
-        <button class="btn btn-info btn-block" type="submit" id="submit-btn" >Log In</button>
+        <button class="btn btn-info btn-block" type="submit" id="submit-btn"  >Log In</button>
       </div>
     </form>
   </div>
