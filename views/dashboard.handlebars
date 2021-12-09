@@ -18,6 +18,9 @@ Author: {{ post.user.username}} Date: {{format_date post.createdAt}}<br>
 
     </p>
     <p>Rating: {{post.post_rating}}/5</p>
+    {{#donutTimes post_rating}}
+    <span>🍩</span>
+{{/donutTimes}}
   </div>
   <div class="card-body">
 
