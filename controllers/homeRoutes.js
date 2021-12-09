@@ -5,9 +5,6 @@ const { User, Post, Comment } = require("./../models");
 
 // GET initial page (this is our login page and sample site page)
 router.get("/", async (req, res) => {
-  res.render("testImage")
-})
-router.get("/", async (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/dashboard");
     return;
