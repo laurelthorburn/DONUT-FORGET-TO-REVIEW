@@ -4,7 +4,9 @@ const { User, Post, Comment } = require("./../models");
 // -------------------------------------------------------------
 
 // GET initial page (this is our login page and sample site page)
-
+router.get("/", async (req, res) => {
+  res.render("testImage")
+})
 router.get("/", async (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/dashboard");
@@ -22,10 +24,10 @@ router.get("/", async (req, res) => {
       ],
     });
 
-      // Serialize data so the template can read it -- else you get a mass of information that is overwhelming and difficult to work with
+    // Serialize data so the template can read it -- else you get a mass of information that is overwhelming and difficult to work with
     const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-      // Pass serialized data and session flag into template
+    // Pass serialized data and session flag into template
     res.render("all", {
       posts,
       username: req.session.username,
@@ -57,10 +59,10 @@ router.get("/dashboard", async (req, res) => {
       ],
     });
 
-      // Serialize data so the template can read it -- else you get a mass of information that is overwhelming and difficult to work with
+    // Serialize data so the template can read it -- else you get a mass of information that is overwhelming and difficult to work with
     const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-      // Pass serialized data and session flag into template
+    // Pass serialized data and session flag into template
     res.render("dashboard", {
       posts,
       username: req.session.username,
@@ -83,7 +85,7 @@ router.get("/aboutUs", async (req, res) => {
 
   try {
 
-      // Pass serialized data and session flag into template
+    // Pass serialized data and session flag into template
     res.render("aboutUs", {
       username: req.session.username,
       user_id: req.session.user_id,
@@ -106,7 +108,7 @@ router.get("/newPost", async (req, res) => {
 
   try {
 
-      // Pass serialized data and session flag into template
+    // Pass serialized data and session flag into template
     res.render("newPost", {
       username: req.session.username,
       user_id: req.session.user_id,
@@ -128,18 +130,18 @@ router.get("/profile", async (req, res) => {
   }
 
   try {
-    
+
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, 
+    const userData = await User.findByPk(req.session.user_id,
       {
-      attributes: { exclude: ['password'] },
-      include: 
-      [{ model: Post }],
-    });
+        attributes: { exclude: ['password'] },
+        include:
+          [{ model: Post }],
+      });
 
     const user = userData.get({ plain: true });
 
-      // Pass serialized data and session flag into template
+    // Pass serialized data and session flag into template
     res.render("profile", {
       ...user,
       loggedIn: req.session.loggedIn,
@@ -169,10 +171,10 @@ router.get("/signUp", async (req, res) => {
       ],
     });
 
-      // Serialize data so the template can read it -- else you get a mass of information that is overwhelming and difficult to work with
+    // Serialize data so the template can read it -- else you get a mass of information that is overwhelming and difficult to work with
     const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-      // Pass serialized data and session flag into template
+    // Pass serialized data and session flag into template
     res.render("signUp", {
       posts,
       username: req.session.username,
@@ -204,10 +206,10 @@ router.get("/favorites", async (req, res) => {
       ],
     });
 
-      // Serialize data so the template can read it -- else you get a mass of information that is overwhelming and difficult to work with
+    // Serialize data so the template can read it -- else you get a mass of information that is overwhelming and difficult to work with
     const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-      // Pass serialized data and session flag into template
+    // Pass serialized data and session flag into template
     res.render("favorites", {
       posts,
       username: req.session.username,
@@ -224,7 +226,7 @@ router.get("/favorites", async (req, res) => {
 router.get("/login", (req, res) => {
 
   console.log(req.session)
-  
+
   if (req.session.loggedIn) {
     res.redirect("/dashboard");
     return;
@@ -261,8 +263,8 @@ router.get("/:id", async (req, res) => {
     req.session.post_id = post.id;
 
     console.log("I AM THE POST ID... I HOPE",
-    req.session.post_id) // works
-    
+      req.session.post_id) // works
+
     res.render("post", {
       post,
       loggedIn: req.session.loggedIn,
