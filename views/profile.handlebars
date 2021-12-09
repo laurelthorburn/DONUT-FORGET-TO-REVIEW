@@ -1,24 +1,15 @@
 
- <head>
-  <meta charset="UTF-8">
-  <title>Profile</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Delius+Unicase&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="../css/style.css">
 
-</header>
-
-      <div class="jumbotron">
-        <div class="container">
+  <div class="jumbotron">
+      <div class="container">
           <h2 style="background-color: #ffffff"> Welcome to your profile, {{username}}!</h2> 
           
           <p></p>
           
-        </div>
       </div>
+  </div>
 
-</head>
+
 
 <section>
   
@@ -26,7 +17,7 @@
   <div class="row mx-auto mt-3">
     <div class="col-xs-12">
 
-
+        {{#each post.comments as |post|}}
         <div class="card" style="width: 18rem;">
           <img src="..." class="card-img-top smaller-img" alt="...">
           <div class="card-body">
@@ -42,20 +33,17 @@
          </ul>
         <div class="card-body">
         <a href="/{{id}}" class="button-1 btn-link" role="button">View Discussion</a>
-        </div>   
+        </div> 
+
+        {{/each}} 
     </div>
 
   </div>
 </div>
 
 </section>   
-  
-  
 
 
-
-
- 
 <div class="container-fluid">
 
   <div class="row mx-auto mt-3">
