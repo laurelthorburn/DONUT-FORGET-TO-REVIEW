@@ -1,9 +1,65 @@
-<div class="menu-container">
 
-    <h2>Welcome to your profile, {{username}}!</h2>
+ <head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Delius+Unicase&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
 
-<div class="row mx-auto mt-3">
-  <div class="col-md-5 ml-5 mr-5 card">
+</header>
+
+      <div class="jumbotron">
+        <div class="container">
+          <h2 style="background-color: #ffffff"> Welcome to your profile, {{username}}!</h2> 
+          
+          <p></p>
+          
+        </div>
+      </div>
+
+</head>
+
+<section>
+  
+<div class="container-fluid p-3">  
+  <div class="row mx-auto mt-3">
+    <div class="col-xs-12">
+
+
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top smaller-img" alt="...">
+          <div class="card-body">
+          <h5 class="card-title">{{post.post_title}}</h5>
+          <p class="card-text">
+          Author: {{ post.user.username}} Date: {{format_date post.createdAt}}<br>
+          {{post.post_content}} </p>
+        </div>
+         <ul class="list-group list-group-flush">
+         <li class="list-group-item">Overall Score: </li>
+         <li class="list-group-item">Rating: </li>
+         <li class="list-group-item">Location: </li>
+         </ul>
+        <div class="card-body">
+        <a href="/{{id}}" class="button-1 btn-link" role="button">View Discussion</a>
+        </div>   
+    </div>
+
+  </div>
+</div>
+
+</section>   
+  
+  
+
+
+
+
+ 
+<div class="container-fluid">
+
+  <div class="row mx-auto mt-3">
+  <div class="col-xs-12 card">
     <h3>Create a New Post:</h3>
 
     <form class="form new-post-form">
@@ -20,6 +76,16 @@
       </div>
     </form>
   </div>
+
+
+
+
+
+
+  
+</div>
+
+
 
   {{#if posts.length}}
   <div class="col-md-5 ml-5 post-list card">

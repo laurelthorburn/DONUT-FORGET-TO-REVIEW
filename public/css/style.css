@@ -213,3 +213,15 @@ footer{
   background: pink;
   cursor: pointer;
 }
+
+/*-----profile design --*/
+
+
+
+.jumbotron {
+  background-image:url("./jumb.jpg") ; 
+  background-size: cover;
+  height: 50%;}
+
+
+/*-----My favorites --*/
