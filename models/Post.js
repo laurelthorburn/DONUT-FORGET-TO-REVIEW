@@ -21,7 +21,7 @@ Post.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    rating: {
+    post_rating: {
       type: DataTypes.INTEGER,
     },
     user_id: {
@@ -30,6 +30,13 @@ Post.init(
         model: 'user',
         key: 'id'
       },
+    },//add likes count on post
+    likesCount:{
+      type:DataTypes.INTEGER,
+      defaultValue:0,
+      validate: {
+                min: 0,
+            }
     },
   },
   {
