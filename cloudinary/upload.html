@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DONUT FORGET TO REVIEW</title>
+    <title>Donut Forget To Review</title>
 </head>
 
 <body>
-    <form>
-        <label for="img">Select image:</label>
-        <input type="file" id="img" name="img" accept="image/*">
-        <input type="submit">
+    <form id="selectFile">
+        <input accept="image/*" type='file' id="imgUpload" />
+        <img id="imgPreview" src="*" alt="Your Image" />
+        <button id="submit">Submit</button>
     </form>
-    <img id="myImg" src="#">
-    <script src="../DONUT-FORGET-TO-REVIEW/cloudinary/script.js">
+
+    <script src="../cloudinary/script.js">
     </script>
 
 </body>

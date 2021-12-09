@@ -17,15 +17,11 @@ Author: {{ post.user.username}} Date: {{format_date post.createdAt}}<br>
     {{post.post_content}}
 
     </p>
+    <p>Rating: {{post.rating}}/5</p>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Overall Score: </li>
-    <li class="list-group-item">Rating: </li>
-    <li class="list-group-item">Location: </li>
-  </ul>
   <div class="card-body">
 
-    <a href="/{{id}}" class="button-1 btn-link" role="button">View Discussion</a>
+    <a href="/{{id}}" class="button-1 btn-link btn-block" role="button">View Discussion</a>
   </div>
 </div>
 
@@ -54,14 +50,15 @@ Another option is that this could be a modal instead of it's own route (slightly
         </button>
       </div>
       <div class="modal-body">
-        <form>
+
+    <form class="form">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Title:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <input type="text" class="form-control" id="post-name">
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Caption:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <textarea class="form-control" id="post-desc"></textarea>
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Rating:</label>
@@ -74,10 +71,10 @@ Another option is that this could be a modal instead of it's own route (slightly
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Regret Review</button>
-        <button type="button" class="btn btn-primary" id="update-button" data-put="">Upload Review</button>
+        <button type="button" class="btn btn-primary" id="upload-btn">Upload Review</button>
       </div>
     </div>
   </div>
 </div> 
 
-<script src="./js/post.js"></script>
+<script src="./js/reviewmodal.js"></script>

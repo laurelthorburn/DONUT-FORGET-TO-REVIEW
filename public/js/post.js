@@ -23,6 +23,8 @@ const newFormHandler = async (event) => {
    }
  };
  
+
+
  const delButtonHandler = async (event) => {
    if (event.target.hasAttribute('data-id')) {
      const id = event.target.getAttribute('data-id');
@@ -41,6 +43,8 @@ const newFormHandler = async (event) => {
    }
  };
 
+
+
 const updateButtonHandler = async (event) => {
   // event.preventDefault();
   if (event.target.hasAttribute('data-update')) {
@@ -53,8 +57,6 @@ const updateButtonHandler = async (event) => {
 
   const postResponse = await response.json(); //converts to readable data
 
-console.log("YOOOOOOOOOO==============",
-postResponse.post_content);
 
 document.querySelector('#message-text').value = postResponse.post_content;
 document.querySelector('#recipient-name').value = postResponse.post_title;
@@ -65,9 +67,6 @@ document.querySelector('#recipient-name').value = postResponse.post_title;
 
 const sendUpdateButton = async (event) => {
   if (event.target.hasAttribute('data-put')) {
-console.log("WHERE AM I??? ID????",
-postID) //works
-
 
 const post_content = document.querySelector('#message-text').value;
 const post_title = document.querySelector('#recipient-name').value;
@@ -88,16 +87,6 @@ const post_title = document.querySelector('#recipient-name').value;
   }
 };
 
-// slider
-
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
  
  document
    .querySelector('.new-post-form')
@@ -114,4 +103,3 @@ slider.oninput = function() {
  document
    .querySelector('#update-button')
    .addEventListener('click', sendUpdateButton);
- 
