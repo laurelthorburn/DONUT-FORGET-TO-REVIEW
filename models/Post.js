@@ -21,7 +21,7 @@ Post.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    rating: {
+    post_rating: {
       type: DataTypes.INTEGER,
     },
     user_id: {

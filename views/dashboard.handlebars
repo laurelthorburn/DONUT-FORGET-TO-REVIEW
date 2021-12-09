@@ -17,7 +17,7 @@ Author: {{ post.user.username}} Date: {{format_date post.createdAt}}<br>
     {{post.post_content}}
 
     </p>
-    <p>Rating: {{post.rating}}/5</p>
+    <p>Rating: {{post.post_rating}}/5</p>
   </div>
   <div class="card-body">
 
@@ -64,7 +64,7 @@ Another option is that this could be a modal instead of it's own route (slightly
             <label for="message-text" class="col-form-label">Rating:</label>
       <div class="slidecontainer">
   <input type="range" min="1" max="5" value="5" class="slider" id="myRange">
-  <p>Value: <span id="demo"></span></p>
+  <p>Value: <span id="rating-num"></span></p>
 </div>
           </div>
         </form>

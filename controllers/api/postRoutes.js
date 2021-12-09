@@ -50,12 +50,18 @@ req.params.id)
   }
 });
 
+//pulling posts
 router.post('/', async (req, res) => {
   try {
+    console.log("do i make it here???POSTS /");
+    console.log("I AM THE BODDDYYYYY",
+    req.body);
     const newPost = await Post.create({
       ...req.body,
       user_id: req.session.user_id,
     });
+    console.log("newPost:",
+    newPost)
 
     res.status(200).json(newPost);
   } catch (err) {
