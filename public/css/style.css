@@ -20,6 +20,9 @@ html, body {
     margin-bottom: auto;
 }
 
+.straight-corner {
+  border-radius: 0 !important;
+}
 
 /* 4Slideshow css */
 * {
@@ -212,6 +215,10 @@ footer{
   border: 0;
   background: rgb(204, 74, 95);
   cursor: pointer;
+}
+
+.post-img {
+  width: 20rem;
 }
 
 /*-----profile design --*/
