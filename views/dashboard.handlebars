@@ -9,7 +9,7 @@
 {{#each posts as |post|}}
 
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top smaller-img" alt="...">
+  <img src="{{post.post_img}}" class="card-img-top smaller-img" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{post.post_title}}</h5>
     <p class="card-text">
@@ -25,6 +25,7 @@ Author: {{ post.user.username}} Date: {{format_date post.createdAt}}<br>
   <div class="card-body">
 
     <a href="/{{id}}" class="button-1 btn-link btn-block" role="button">View Discussion</a>
+    <button class="fav-button" data-favorite="{{id}}">Add to favorites</button>
   </div>
 </div>
 
@@ -81,3 +82,4 @@ Another option is that this could be a modal instead of it's own route (slightly
 </div> 
 
 <script src="./js/reviewmodal.js"></script>
+<script src="./js/favorite.js"></script>

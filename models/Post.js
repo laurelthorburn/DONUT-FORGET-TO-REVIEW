@@ -24,6 +24,10 @@ Post.init(
     post_rating: {
       type: DataTypes.INTEGER,
     },
+    post_img: {
+      type: DataTypes.TEXT,
+      allowNull: true, 
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

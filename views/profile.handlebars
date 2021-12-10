@@ -55,10 +55,24 @@
         <label for="post-name">post name:</label>
         <input class="form-input" type="text" id="post-name" name="post-name" />
       </div>
+      
       <div class="form-group">
         <label for="post-desc">description:</label>
         <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
       </div>
+
+      <a id="hosted-link" target="_blank"></a>
+  <form>
+    <div class="form-group">
+      <input type="file" name="my-file">
+      <input type="text" name="my-description" placeholder="file description">
+
+      <input type="submit" value="Upload" disabled>
+    </div>
+
+    {{!-- img tag for displaying file to upload --}}
+    <img id='img-preview'>
+  </form>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
@@ -125,3 +139,4 @@
 </div> 
 
 <script src="./js/post.js"></script>
+  <script src="/js/script.js"></script>

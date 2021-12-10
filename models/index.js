@@ -2,6 +2,7 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 const Like = require('./Like');
+const Favorite = require('./Favorite');
 
 Post.belongsTo(User, {
     foreignKey: 'user_id'
@@ -36,7 +37,6 @@ Like.belongsTo(Post, {
      foreignKey: 'post_id', 
 });
 
-
 // Like.belongsTo(User,{});
 
 User.hasMany(Like, { 
@@ -47,4 +47,14 @@ Like.belongsTo(User, {
     foreignKey: 'user_id', 
  });
 
-module.exports = { User, Post, Comment, Like };
+ Favorite.belongsTo(Post, {
+  
+});
+
+Favorite.belongsTo(User, {
+
+});
+//User.hasMany(Favorite,{through: Post});
+//Post.manyToMany(Favorite,{});
+
+module.exports = { User, Post, Comment, Like, Favorite };

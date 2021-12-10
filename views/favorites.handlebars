@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -30,3 +31,38 @@
     </div>
 
 {{/each}} 
+=======
+<div class="menu-container">
+
+
+<div class="container">
+   <div class="card-columns">
+
+{{#each favorites as |favorite|}}
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top smaller-img" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{favorite.post_title}}</h5>
+    <p class="card-text">
+Author: {{ favorite.user.username}} Date: {{format_date favorite.createdAt}}<br>
+    {{favorite.post_content}}
+
+    </p>
+    <p>Rating: {{favorite.post_rating}}/5</p>
+    {{#donutTimes post_rating}}
+    <span>🍩</span>
+{{/donutTimes}}
+  </div>
+  <div class="card-body">
+
+    <a href="/{{id}}" class="button-1 btn-link btn-block" role="button">View Discussion</a>
+    <button class="fav-button">Remove from favorites</button>
+  </div>
+</div>
+
+{{/each}}
+
+</div>
+</div>
+>>>>>>> e5cb2ca75412d998e06acf3d376d4ce1d6bb896d
