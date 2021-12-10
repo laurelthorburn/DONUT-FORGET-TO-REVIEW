@@ -8,7 +8,7 @@
 
 {{#each posts as |post|}}
 
-<div class="card straight-corner m-2 p-2" style="width: 18rem;">
+<div class="card straight-corner m-2 p-2 border-secondary" style="width: 18rem;">
   <center>
   <img src="{{post.post_img}}" class="card-img-top smaller-img" alt="{{post.post_title}}">
   <div class="card-body m-0 p-0">
@@ -24,8 +24,9 @@
   </center>
   <div class="card-body p-0 m-0">
 
-    <a href="/{{id}}" class="button-1 btn-link btn-block" role="button">View Discussion</a>
-    <button class="fav-button" data-favorite="{{id}}">Add to favorites</button>
+<a href="/{{id}}"><button class="button-57 btn-block" role="button"><span class="text">read more...</span><span>donut miss out</span></button></a>
+    {{!-- <a href="/{{id}}" class="btn-link btn-block" role="button">View Discussion</a> --}}
+    {{!-- <button class="fav-button" data-favorite="{{id}}">Add to favorites</button> --}}
   </div>
 </div>
 
@@ -36,7 +37,7 @@
 
 <footer>
 
-<button class="button-64" role="button" data-toggle="modal" data-target="#newPostModal"><span class="text">+ Add Review</span></button>
+<button class="fill" role="button" type="button" data-toggle="modal" data-target="#newPostModal"><span class="text">+ Add Review</span></button>
 
 </footer>
 
