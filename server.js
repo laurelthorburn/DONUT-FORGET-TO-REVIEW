@@ -35,8 +35,8 @@ const hbs = exphbs.create({}); //this tells it to go to layout/main - automatica
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
