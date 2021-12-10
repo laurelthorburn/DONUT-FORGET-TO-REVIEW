@@ -1,0 +1,32 @@
+
+
+
+  <div class="jumbotron">
+      <div class="container">
+          <h2 style="background-color: #ffffff"> Here all your favorites donuts, {{username}}!</h2> 
+          
+          <p></p>
+          
+      </div>
+  </div>
+
+{{#each post.comments as |post|}}
+    <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top smaller-img" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{post.post_title}}</h5>
+          <p class="card-text">
+          Author: {{ post.user.username}} Date: {{format_date post.createdAt}}<br>
+          {{post.post_content}} </p>
+        </div>
+         <ul class="list-group list-group-flush">
+         <li class="list-group-item">Overall Score: </li>
+         <li class="list-group-item">Rating: </li>
+         <li class="list-group-item">Location: </li>
+         </ul>
+        <div class="card-body">
+        <a href="/{{id}}" class="button-1 btn-link" role="button">View Discussion</a>
+        </div> 
+    </div>
+
+{{/each}} 
