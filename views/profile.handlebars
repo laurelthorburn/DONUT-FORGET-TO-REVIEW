@@ -60,6 +60,18 @@
         <label for="post-desc">description:</label>
         <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
       </div>
+      
+  <form>
+    <div class="form-group">
+      <input type="file" name="my-file">
+      <input type="text" name="my-description" placeholder="file description">
+
+      <input type="submit" value="Upload" disabled>
+    </div>
+
+    {{!-- img tag for displaying file to upload --}}
+    <img id='img-preview'>
+  </form>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
@@ -126,3 +138,4 @@
 </div> 
 
 <script src="./js/post.js"></script>
+  <script src="/js/script.js"></script>
