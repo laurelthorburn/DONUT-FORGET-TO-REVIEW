@@ -5,6 +5,10 @@ html, body {
     height: 100%;
     background-color: #FAFAFA;
 }
+#welcome-pointer:hover {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🍩</text></svg>")
+  16 0, auto;
+}
 
 .welcome-font{
     font-family: 'Delius Unicase', cursive;
@@ -15,6 +19,10 @@ html, body {
 
 .post-main-font{
   font-family: 'Readex Pro', sans-serif;
+}
+
+#logout{
+  cursor: pointer;
 }
 
 /* Sign up and login cards */
@@ -66,8 +74,8 @@ img {
 }
 
 .smaller-img {
-  height: 275px;
-  width: 275px;
+  height: 200px;
+  width: 200px;
 }
 
 
