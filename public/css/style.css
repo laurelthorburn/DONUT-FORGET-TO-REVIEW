@@ -9,6 +9,13 @@ html, body {
 .welcome-font{
     font-family: 'Delius Unicase', cursive;
 }
+.title-font{
+  font-family: 'Readex Pro', sans-serif;
+}
+
+.post-main-font{
+  font-family: 'Readex Pro', sans-serif;
+}
 
 /* Sign up and login cards */
 .row h-100 {
@@ -220,10 +227,11 @@ footer{
 .post-img {
   width: 20rem;
 }
+.card-columns {
+  column-count: 4;
+}
 
 /*-----profile design --*/
-
-
 
 .jumbotron {
   background-image:url("./jumb.jpg") ; 

@@ -8,21 +8,21 @@
 
 {{#each posts as |post|}}
 
-<div class="card straight-corner" style="width: 18rem;">
+<div class="card straight-corner m-2 p-2" style="width: 18rem;">
+  <center>
   <img src="{{post.post_img}}" class="card-img-top smaller-img" alt="{{post.post_title}}">
-  <div class="card-body">
-    <h5 class="card-title">{{post.post_title}}</h5>
-    <p class="card-text">
-Author: {{ post.user.username}} Date: {{format_date post.createdAt}}<br>
-    {{!-- {{post.post_content}} --}}
-
-    </p>
-    <p>Rating: {{post.post_rating}}/5</p>
-    {{#donutTimes post_rating}}
+  <div class="card-body m-0 p-0">
+    <hr>
+    <h5 class="card-title title-font">{{post.post_title}}</h5>
+    <p class="card-text post-main-font">Author: {{ post.user.username}}</p>
+        {{#donutTimes post_rating}}
     <span>🍩</span>
 {{/donutTimes}}
+    <p class="post-main-font">Rating: {{post.post_rating}}/5</p>
+    <hr>
   </div>
-  <div class="card-body">
+  </center>
+  <div class="card-body p-0 m-0">
 
     <a href="/{{id}}" class="button-1 btn-link btn-block" role="button">View Discussion</a>
     <button class="fav-button" data-favorite="{{id}}">Add to favorites</button>
@@ -35,9 +35,6 @@ Author: {{ post.user.username}} Date: {{format_date post.createdAt}}<br>
 </div>
 
 <footer>
-
-{{!-- let the user add a post -- this could be a cool footer that stays on page no matter the amount of posts<br>
-Another option is that this could be a modal instead of it's own route (slightly more complicated)<br> --}}
 
 <button class="button-64" role="button" data-toggle="modal" data-target="#newPostModal"><span class="text">+ Add Review</span></button>
 
