@@ -41,23 +41,25 @@ const newReviewButton = async (event) => {
      }
    };
 
- const delButtonHandler = async (event) => {
-   if (event.target.hasAttribute('data-id')) {
-     const id = event.target.getAttribute('data-id');
-     console.log("delete id:",
-     id)
+//  const delButtonHandler = async (event) => {
+//    console.log("HEY DED WE MAKE IT TO DELLLLLETE")
+//    console.log(event.target)
+//    if (event.target.hasAttribute('data-id')) {
+//      const id = event.target.getAttribute('data-id');
+//      console.log("delete id:",
+//      id)
  
-     const response = await fetch(`/api/posts/${id}`, {
-       method: 'DELETE',
-     });
+//      const response = await fetch(`/api/posts/${id}`, {
+//        method: 'DELETE',
+//      });
  
-     if (response.ok) {
-       document.location.replace('/profile');
-     } else {
-       alert('Failed to delete post');
-     }
-   }
- };
+//      if (response.ok) {
+//        document.location.replace('/profile');
+//      } else {
+//        alert('Failed to delete post');
+//      }
+//    }
+//  };
 
 
 
@@ -111,14 +113,40 @@ document
 //  document
 //    .querySelector('.new-post-form')
 //    .addEventListener('submit', newFormHandler);
- 
- document
-   .querySelector('.post-list')
-   .addEventListener('click', delButtonHandler);
 
- document
-   .querySelector('.post-list')
-   .addEventListener('click', updateButtonHandler);
+const handleButtonClick = async (event) => {
+  if (event.target.getAttribute('data-button-type') == 'update') {
+    // do updates here
+  } else if (event.target.getAttribute('data-button-type') == 'delete') {
+    console.log("HEY DED WE MAKE IT TO DELLLLLETE")
+    console.log(event.target)
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+      console.log("delete id:",
+      id)
+  
+      const response = await fetch(`/api/posts/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to delete post');
+      }
+    }
+  }
+}
+
+document.querySelector('.post-list').addEventListener('click', handleButtonClick);
+ 
+//  document
+//    .querySelector('.post-list')
+//    .addEventListener('click', delButtonHandler);
+
+//  document
+//    .querySelector('.post-list')
+//    .addEventListener('click', updateButtonHandler);
  
  document
    .querySelector('#update-button')
