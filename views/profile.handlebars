@@ -20,7 +20,7 @@
   <div class="card-body m-0 p-0">
     <hr>
     <h5 class="card-title title-font">{{loud post.post_title}}</h5>
-    <p class="card-text post-main-font">Author: {{ post.user.username}}</p>
+    <p class="card-text post-main-font">Author: {{ ../username}}</p>
         {{#donutTimes post_rating}}
     <span>🍩</span>
 {{/donutTimes}}
@@ -31,8 +31,6 @@
   <div class="card-body p-0 m-0">
 
 <a href="/{{id}}"><button class="button-57 btn-block" role="button"><span class="text">read more...</span><span>donut miss out</span></button></a>
-    {{!-- <a href="/{{id}}" class="btn-link btn-block" role="button">View Discussion</a> --}}
-    {{!-- <button class="fav-button" data-favorite="{{id}}">Add to favorites</button> --}}
   </div>
 </div>
 

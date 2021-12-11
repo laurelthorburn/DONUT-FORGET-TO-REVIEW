@@ -126,9 +126,8 @@ router.get("/profile", async (req, res) => {
     res.redirect("/");
     return;
   }
-
   try {
-
+    console.log("Hello! teammates, do we make it here?")
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id,
       {
@@ -138,6 +137,8 @@ router.get("/profile", async (req, res) => {
       });
 
     const user = userData.get({ plain: true });
+
+    console.log(user)
 
     // Pass serialized data and session flag into template
     res.render("profile", {
