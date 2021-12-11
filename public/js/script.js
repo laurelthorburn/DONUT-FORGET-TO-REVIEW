@@ -1,3 +1,5 @@
+let cloudURL;
+
 window.addEventListener('load', function () {
     const img = document.getElementById('img-preview');
     const fileInputEl = document.querySelector('input[name="my-file"]')
@@ -18,6 +20,9 @@ window.addEventListener('load', function () {
         img.setAttribute('src', url)
         hostedLinkEl.setAttribute('href', url)
         hostedLinkEl.innerText = `image is now hosted here`
+        cloudURL = url;
+        console.log("this is the stored url",
+        cloudURL)
     }
 
 
