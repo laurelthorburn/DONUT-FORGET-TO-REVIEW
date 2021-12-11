@@ -1,150 +1,145 @@
-<div class="container">
-  <h2 style="background-color: #ffffff"> Welcome to your profile, {{username}}!</h2>
+<div class="menu-container">
+  <div class="container">
+    <div class="card-columns post-list">
 
-  <div class="menu-container">
-    <div class="container">
-      <div class="card-columns post-list">
+      {{#each posts as |post|}}
 
-        {{#each posts as |post|}}
-
-        <div class="card straight-corner m-2 p-2 border-secondary" style="width: 18rem;">
-          <center>
-            <img src="{{post.post_img}}" class="card-img-top smaller-img" alt="{{post.post_title}}">
-            <div class="card-body m-0 p-0">
-              <hr>
-              <h5 class="card-title title-font">{{loud post.post_title}}</h5>
-              <p class="card-text post-main-font">Author: {{ ../username}}</p>
-              {{#donutTimes post_rating}}
-              <span>🍩</span>
-              {{/donutTimes}}
-              <p class="post-main-font">Rating: {{post.post_rating}}/5</p>
-              <hr>
-            </div>
-          </center>
-          <div class="card-body p-0 m-0">
-
-            <a href="/{{id}}"><button class="button-57 btn-block" role="button"><span class="text">Read
-                  More...</span><span>donut miss out</span></button></a>
-
-            {{!--Update existing posts --}}
-
-            <button class="button-57 btn-block" data-update={{post.id}} data-toggle="modal" data-target="#exampleModal"
-              data-whatever="@mdo" id="first-update" role="button"><span class="text" data-button-type="update">Update
-                Post</span><span>update your donut</span></button>
-
-            {{!--Delete existing posts --}}
-            <button class="button-57 btn-block delete-btn" data-id={{post.id}} role="button"
-              data-button-type="delete"><span class="text">Delete
-                Post</span><span>delete your donut</span></button>
-
+      <div class="card straight-corner m-2 p-2 border-secondary" style="width: 18rem;">
+        <center>
+          <img src="{{post.post_img}}" class="card-img-top smaller-img" alt="{{post.post_title}}">
+          <div class="card-body m-0 p-0">
+            <hr>
+            <h5 class="card-title title-font">{{loud post.post_title}}</h5>
+            <p class="card-text post-main-font">Author: {{ ../username}}</p>
+            {{#donutTimes post_rating}}
+            <span>🍩</span>
+            {{/donutTimes}}
+            <p class="post-main-font">Rating: {{post.post_rating}}/5</p>
+            <hr>
           </div>
-        </div>
-        {{/each}}
+        </center>
+        <div class="card-body p-0 m-0">
 
+          <a href="/{{id}}"><button class="button-57 btn-block" role="button"><span class="text">Read
+                More...</span><span>donut miss out</span></button></a>
+
+          {{!--Update existing posts --}}
+
+          <button class="button-57 btn-block" data-update={{post.id}} data-toggle="modal" data-target="#exampleModal"
+            data-whatever="@mdo" id="first-update" role="button"><span class="text" data-button-type="update">Update
+              Post</span><span>update your donut</span></button>
+
+          {{!--Delete existing posts --}}
+          <button class="button-57 btn-block delete-btn" data-id={{post.id}} role="button"
+            data-button-type="delete"><span class="text">Delete
+              Post</span><span>delete your donut</span></button>
+
+        </div>
+      </div>
+      {{/each}}
+
+    </div>
+  </div>
+</div>
+
+
+<footer>
+
+  <button class="fill" role="button" type="button" data-toggle="modal" data-target="#newPostModal"><span class="text">+
+      Add Review</span></button>
+
+</footer>
+
+{{!-- UPDATE MODAL BELOW --}}
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update your post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Title:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Content:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Regret update</button>
+        <button type="button" class="btn btn-primary" id="update-button" data-put="">Confirm update</button>
       </div>
     </div>
   </div>
+</div>
 
 
-  <footer>
+{{!-- ADD NEW REVIEW MODAL BELOW --}}
+<div class="modal" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newPostModalLabel">Create a New Review</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 
-    <button class="fill" role="button" type="button" data-toggle="modal" data-target="#newPostModal"><span
-        class="text">+ Add Review</span></button>
-
-  </footer>
-
-  {{!-- UPDATE MODAL BELOW --}}
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Update your post</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Title:</label>
-              <input type="text" class="form-control" id="recipient-name">
+        <form class="form">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Title:</label>
+            <input type="text" class="form-control" id="post-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Caption:</label>
+            <textarea class="form-control" id="post-desc"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Rating:</label>
+            <div class="slidecontainer">
+              <input type="range" min="1" max="5" value="5" class="slider" id="myRange">
+              <p>Value: <span id="rating-num"></span></p>
             </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Content:</label>
-              <textarea class="form-control" id="message-text"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Regret update</button>
-          <button type="button" class="btn btn-primary" id="update-button" data-put="">Confirm update</button>
-        </div>
+          </div>
+        </form>
+
+        {{!-- ====================================================== --}}
+
+        {{!-- adding multer to modal --}}
+        {{!-- <form action="/api/images/upload" enctype="multipart/form-data" method="post"> --}}
+        <form>
+
+          <div class="form-group">
+            <input type="file" class="form-control-file" name="my-file">
+            <input type="text" name="my-description" placeholder="file description">
+
+            <input type="submit" value="Upload" disabled>
+          </div>
+          <a id="hosted-link" target="_blank"></a><br>
+          <img id='img-preview'>
+
+
+        </form>
+
+        {{!-- ============================================================== --}}
+
+        {{!-- submit/POST comment, can i also use this to upload the file to cloudinary and return the URL? Or, should I upload first in order to get the URL which then gets past to the post_img on the submit review btn --}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-decline" data-dismiss="modal">Trash ❌</button>
+        <button type="button" class="btn btn-accept" id="upload-btn">Share 👩‍👩‍👧</button>
       </div>
     </div>
   </div>
+</div>
 
-
-  {{!-- ADD NEW REVIEW MODAL BELOW --}}
-  <div class="modal" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="newPostModalLabel">Create a New Review</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-
-          <form class="form">
-            <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Title:</label>
-              <input type="text" class="form-control" id="post-name">
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Caption:</label>
-              <textarea class="form-control" id="post-desc"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Rating:</label>
-              <div class="slidecontainer">
-                <input type="range" min="1" max="5" value="5" class="slider" id="myRange">
-                <p>Value: <span id="rating-num"></span></p>
-              </div>
-            </div>
-          </form>
-
-          {{!-- ====================================================== --}}
-
-          {{!-- adding multer to modal --}}
-          {{!-- <form action="/api/images/upload" enctype="multipart/form-data" method="post"> --}}
-          <form>
-
-            <div class="form-group">
-              <input type="file" class="form-control-file" name="my-file">
-              <input type="text" name="my-description" placeholder="file description">
-
-              <input type="submit" value="Upload" disabled>
-            </div>
-            <a id="hosted-link" target="_blank"></a><br>
-            <img id='img-preview'>
-
-
-          </form>
-
-          {{!-- ============================================================== --}}
-
-          {{!-- submit/POST comment, can i also use this to upload the file to cloudinary and return the URL? Or, should I upload first in order to get the URL which then gets past to the post_img on the submit review btn --}}
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Regret Review</button>
-          <button type="button" class="btn btn-primary" id="upload-btn">Upload Review</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="./js/script.js"></script>
-  <script src="./js/post.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/post.js"></script>

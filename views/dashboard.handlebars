@@ -58,17 +58,6 @@
               <label for="recipient-name" class="col-form-label">Title:</label>
               <input type="text" class="form-control" id="post-name">
             </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Caption:</label>
-              <textarea class="form-control" id="post-desc"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Rating:</label>
-              <div class="slidecontainer">
-                <input type="range" min="1" max="5" value="5" class="slider" id="myRange">
-                <p>Value: <span id="rating-num"></span></p>
-              </div>
-            </div>
             </center>
             <div class="card-body p-0 m-0">
 
@@ -83,15 +72,70 @@
       </div>
     </div>
 
-    {{!-- ============================================================== --}}
+    <footer>
 
-    {{!-- submit/POST comment, can i also use this to upload the file to cloudinary and return the URL? Or, should I upload first in order to get the URL which then gets past to the post_img on the submit review btn --}}
+      <button class="fill" role="button" type="button" data-toggle="modal" data-target="#newPostModal"><span
+          class="text">+ Add Review</span></button>
+
+    </footer>
+
+    {{!-- MODAL BELOW --}}
+    <div class="modal" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="newPostModalLabel">🍴 Create a New Review</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <form class="form">
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Title:</label>
+                <input type="text" class="form-control" id="post-name">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Caption:</label>
+                <textarea class="form-control" id="post-desc"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Rating:</label>
+                <div class="slidecontainer">
+                  <input type="range" min="1" max="5" value="5" class="slider" id="myRange">
+                  <p>Value: <span id="rating-num"></span></p>
+                </div>
+              </div>
+              </center>
+              <div class="card-body p-0 m-0">
+
+                <a href="/{{id}}"><button class="button-57 btn-block" role="button"><span class="text">read
+                      more...</span><span>donut miss out</span></button></a>
+                {{!-- <button class="fav-button" data-favorite="{{id}}">Add to favorites</button> --}}
+              </div>
+          </div>
+
+          {{/each}}
+
+          {{!-- submit/POST comment, can i also use this to upload the file to cloudinary and return the URL? Or, should I upload first in order to get the URL which then gets past to the post_img on the submit review btn --}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-decline" data-dismiss="modal">Trash ❌</button>
+          <button type="button" class="btn btn-accept" id="upload-btn">Share 👩‍👩‍👧</button>
+        </div>
+      </div>
+
+      {{!-- ============================================================== --}}
+
+      {{!-- submit/POST comment, can i also use this to upload the file to cloudinary and return the URL? Or, should I upload first in order to get the URL which then gets past to the post_img on the submit review btn --}}
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-decline" data-dismiss="modal">Trash ❌</button>
+      <button type="button" class="btn btn-accept" id="upload-btn">Share 👩‍👩‍👧</button>
+    </div>
   </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-decline" data-dismiss="modal">Trash ❌</button>
-    <button type="button" class="btn btn-accept" id="upload-btn">Share 👩‍👩‍👧</button>
-  </div>
-</div>
 </div>
 
 <script src="./js/script.js"></script>
