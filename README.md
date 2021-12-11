@@ -32,6 +32,25 @@ SO THAT I can grow my donut community.
 <a name="acceptancesection"></a>
 ## Acceptance Criteria
 ```
+Given as an unauthenticated user
+WHEN I arrive at the website
+THEN I am presented with two boxes, one shows slides of donuts and the other is a login box
+WHEN I don't have an account, I click "Join us"
+THEN I sign up for a username and password and click create a new account
+WHEN I have an account, I fill up the boxes with my authentication and click log in
+
+
+Given as an authenticated user
+WHEN I select login, I land to the main feed 
+THEN I am presented all post from all users
+THEN I am presented with a page that displays the website creators and their favorite donuts
+WHEN I click on add review 
+WHEN I click on WELCOME 
+THEN I can create a donut review with title, description, rating and upload a picture
+WHEN I click on PROFILE 
+THEN I am presented with all my posts that I can update or delete
+WHEN I click logout 
+Then I am redirected to login page
 
 
 ```
