@@ -46,7 +46,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="newPostModalLabel">Create a New Review</h5>
+          <h5 class="modal-title" id="newPostModalLabel">🍴 Create a New Review</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -69,39 +69,32 @@
                 <p>Value: <span id="rating-num"></span></p>
               </div>
             </div>
-          </form>
+            </center>
+            <div class="card-body p-0 m-0">
 
-          {{!-- ====================================================== --}}
-
-          {{!-- adding multer to modal --}}
-          {{!-- <form action="/api/images/upload" enctype="multipart/form-data" method="post"> --}}
-          <form>
-
-            <div class="form-group">
-              <input type="file" class="form-control-file" name="my-file">
-              <input type="text" name="my-description" placeholder="file description">
-
-              <input type="submit" value="Upload" disabled>
+              <a href="/{{id}}"><button class="button-57 btn-block" role="button"><span class="text">read
+                    more...</span><span>donut miss out</span></button></a>
+              {{!-- <button class="fav-button" data-favorite="{{id}}">Add to favorites</button> --}}
             </div>
-            <a id="hosted-link" target="_blank"></a><br>
-            <img id='img-preview'>
-
-
-          </form>
-
-          {{!-- ============================================================== --}}
-
-          {{!-- submit/POST comment, can i also use this to upload the file to cloudinary and return the URL? Or, should I upload first in order to get the URL which then gets past to the post_img on the submit review btn --}}
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Regret Review</button>
-          <button type="button" class="btn btn-primary" id="upload-btn">Upload Review</button>
-        </div>
+
+        {{/each}}
+
       </div>
     </div>
+
+    {{!-- ============================================================== --}}
+
+    {{!-- submit/POST comment, can i also use this to upload the file to cloudinary and return the URL? Or, should I upload first in order to get the URL which then gets past to the post_img on the submit review btn --}}
   </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-decline" data-dismiss="modal">Trash ❌</button>
+    <button type="button" class="btn btn-accept" id="upload-btn">Share 👩‍👩‍👧</button>
+  </div>
+</div>
+</div>
 
-  <script src="./js/script.js"></script>
-  <script src="./js/reviewmodal.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/reviewmodal.js"></script>
 
-  {{!-- <script src="./js/favorite.js"></script> --}}
+{{!-- <script src="./js/favorite.js"></script> --}}
