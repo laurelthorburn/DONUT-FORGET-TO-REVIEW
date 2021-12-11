@@ -19,7 +19,7 @@
           <div class="card-body m-0 p-0">
             <hr>
             <h5 class="card-title title-font">{{loud post.post_title}}</h5>
-            <p class="card-text post-main-font">Author: {{ post.user.username}}</p>
+            <p class="card-text post-main-font">Author: {{ ../username}}</p>
             {{#donutTimes post_rating}}
             <span>🍩</span>
             {{/donutTimes}}
@@ -29,22 +29,68 @@
         </center>
         <div class="card-body p-0 m-0">
 
-          <a href="/{{id}}"><button class="button-57 btn-block" role="button"><span class="text">read
-                more...</span><span>donut miss out</span></button></a>
-          {{!-- <a href="/{{id}}"><button class="button-57 btn-block" role="button"><span class="text">Update
-                Post</span><span>donut miss out</span></button></a> --}}
-          {{!-- <a href="/{{id}}" class="btn-link btn-block" role="button">View Discussion</a> --}}
-          {{!-- <button class="fav-button" data-favorite="{{id}}">Add to favorites</button> --}}
+          <a href="/{{id}}"><button class="button-57 btn-block" role="button"><span class="text">Read
+                More...</span><span>donut miss out</span></button></a>
+
+          {{!--Update existing posts --}}
+
+          <button class="button-57 btn-block" data-update={{post.id}} data-toggle="modal" data-target="#exampleModal"
+            data-whatever="@mdo" id="update-button" role="button"><span class="text">Update
+              Post</span><span>donut miss out</span></button>
+
+          {{!--Delete existing posts --}}
+          <button class="button-57 btn-block" data-update={{post.id}} data-toggle="modal" data-target="#exampleModal"
+            data-whatever="@mdo" class="post-list" role="button"><span class="text">Delete
+              Post</span><span>donut miss out</span></button>
+
+
+          {{!---Update Post Modal--}}
+
+          <div class="modal" id="updatePostModal" tabindex="-1" role="dialog" aria-labelledby="updatePostModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="updatePostModalLabel">Update Your Post</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <form class="form">
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Title:</label>
+                      <input type="text" class="form-control" id="post-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">Caption:</label>
+                      <textarea class="form-control" id="post-desc"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">Rating:</label>
+                      <div class="slidecontainer">
+                        <input type="range" min="1" max="5" value="5" class="slider" id="myRange">
+                        <p>Value: <span id="rating-num"></span></p>
+                      </div>
+                    </div>
+                  </form>
+
+
+                </div>
+
+
+
+              </div>
+            </div>
+
+            {{/each}}
+
+          </div>
         </div>
-      </div>
-
-      {{/each}}
-
-    </div>
-  </div>
 
 
-  {{!-- <section>
+        {{!-- <section>
   
 <div class="container-fluid p-3">  
   <div class="row mx-auto mt-3">
@@ -74,7 +120,7 @@
 
 </section>    --}}
 
-  {{!-- {{#if posts.length}}
+        {{!-- {{#if posts.length}}
   <div class="col-md-5 ml-5 post-list card">
     <h3>Current posts:</h3>
 
@@ -95,73 +141,73 @@
 
 
 
-  <footer>
+        <footer>
 
-    <button class="fill" role="button" type="button" data-toggle="modal" data-target="#newPostModal"><span
-        class="text">+ Add Review</span></button>
+          <button class="fill" role="button" type="button" data-toggle="modal" data-target="#newPostModal"><span
+              class="text">+ Add Review</span></button>
 
-  </footer>
+        </footer>
 
-  {{!-- MODAL BELOW --}}
-  <div class="modal" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="newPostModalLabel">Create a New Review</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
+        {{!-- MODAL BELOW --}}
+        <div class="modal" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="newPostModalLabel">Create a New Review</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
 
-          <form class="form">
-            <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Title:</label>
-              <input type="text" class="form-control" id="post-name">
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Caption:</label>
-              <textarea class="form-control" id="post-desc"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Rating:</label>
-              <div class="slidecontainer">
-                <input type="range" min="1" max="5" value="5" class="slider" id="myRange">
-                <p>Value: <span id="rating-num"></span></p>
+                <form class="form">
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Title:</label>
+                    <input type="text" class="form-control" id="post-name">
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="col-form-label">Caption:</label>
+                    <textarea class="form-control" id="post-desc"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="col-form-label">Rating:</label>
+                    <div class="slidecontainer">
+                      <input type="range" min="1" max="5" value="5" class="slider" id="myRange">
+                      <p>Value: <span id="rating-num"></span></p>
+                    </div>
+                  </div>
+                </form>
+
+                {{!-- ====================================================== --}}
+
+                {{!-- adding multer to modal --}}
+                {{!-- <form action="/api/images/upload" enctype="multipart/form-data" method="post"> --}}
+                <form>
+
+                  <div class="form-group">
+                    <input type="file" class="form-control-file" name="my-file">
+                    <input type="text" name="my-description" placeholder="file description">
+
+                    <input type="submit" value="Upload" disabled>
+                  </div>
+                  <a id="hosted-link" target="_blank"></a><br>
+                  <img id='img-preview'>
+
+
+                </form>
+
+                {{!-- ============================================================== --}}
+
+                {{!-- submit/POST comment, can i also use this to upload the file to cloudinary and return the URL? Or, should I upload first in order to get the URL which then gets past to the post_img on the submit review btn --}}
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Regret Review</button>
+                <button type="button" class="btn btn-primary" id="upload-btn">Upload Review</button>
               </div>
             </div>
-          </form>
-
-          {{!-- ====================================================== --}}
-
-          {{!-- adding multer to modal --}}
-          {{!-- <form action="/api/images/upload" enctype="multipart/form-data" method="post"> --}}
-          <form>
-
-            <div class="form-group">
-              <input type="file" class="form-control-file" name="my-file">
-              <input type="text" name="my-description" placeholder="file description">
-
-              <input type="submit" value="Upload" disabled>
-            </div>
-            <a id="hosted-link" target="_blank"></a><br>
-            <img id='img-preview'>
-
-
-          </form>
-
-          {{!-- ============================================================== --}}
-
-          {{!-- submit/POST comment, can i also use this to upload the file to cloudinary and return the URL? Or, should I upload first in order to get the URL which then gets past to the post_img on the submit review btn --}}
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Regret Review</button>
-          <button type="button" class="btn btn-primary" id="upload-btn">Upload Review</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <script src="./js/script.js"></script>
-  <script src="./js/post.js"></script>
+        <script src="./js/script.js"></script>
+        <script src="./js/post.js"></script>

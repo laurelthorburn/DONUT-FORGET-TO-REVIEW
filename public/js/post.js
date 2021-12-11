@@ -76,7 +76,6 @@ const updateButtonHandler = async (event) => {
 
     document.querySelector('#message-text').value = postResponse.post_content;
     document.querySelector('#recipient-name').value = postResponse.post_title;
-
     console.log(postResponse);
     return postResponse;
   };
@@ -87,6 +86,7 @@ const sendUpdateButton = async (event) => {
 
     const post_content = document.querySelector('#message-text').value;
     const post_title = document.querySelector('#recipient-name').value;
+    // const post_img = cloudURL;
 
     const response = await fetch(`/api/posts/edit/${postID}`, {
       method: 'PUT',
