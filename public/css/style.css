@@ -103,6 +103,33 @@ img {
 }
 
 
+/* loggin css*/
+
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.form-container {
+  flex-grow: 1;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slide-container {
+  width: 600px,
+  
+}
+
 /* CSS */
 .button-1 {
   background-color: #EA4C89;
