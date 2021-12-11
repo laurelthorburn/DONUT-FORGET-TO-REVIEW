@@ -187,7 +187,8 @@ footer{
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
   width: 100%; /* Full-width */
-  height: 25px;
+  height: 10px;
+  border-radius: 5px;
   background: #d3d3d3; /* Grey background */
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
@@ -213,7 +214,7 @@ footer{
 
 .slider::-moz-range-thumb {
   width: 23px;
-  height: 25px;
+  height: 24px;
   border: 0;
   background: url(../media/donut-svg.svg);
   cursor: pointer;
