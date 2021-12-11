@@ -41,6 +41,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => { //changed to false, may need to change back to true for heroku?
   app.listen(PORT, () => console.log('Now listening'));
 });
