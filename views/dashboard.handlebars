@@ -68,6 +68,15 @@
 </div>
           </div>
         </form>
+{{!-- adding multer to modal --}}
+        <form action="/stats" enctype="multipart/form-data" method="post">
+  <div class="form-group">
+    <input type="file" class="form-control-file" name="uploaded_file">
+          
+  </div>
+</form>
+
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Regret Review</button>
@@ -78,4 +87,5 @@
 </div> 
 
 <script src="./js/reviewmodal.js"></script>
+<script src="./js/script.js"></script>
 {{!-- <script src="./js/favorite.js"></script> --}}
