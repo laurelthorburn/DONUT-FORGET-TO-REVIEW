@@ -16,7 +16,7 @@ const newReviewButton = async (event) => {
      const post_title = document.querySelector('#post-name').value;
      const post_content = document.querySelector('#post-desc').value;
      const post_rating = slider.value;
-     const post_img = cloudURL;
+    //  const post_img = cloudURL;
      console.log("I am the rating of the post... maybe??: ",
      "post-rating:",
      post_rating, 
@@ -29,7 +29,7 @@ const newReviewButton = async (event) => {
      if (post_title && post_content) {
        const response = await fetch(`/api/posts`, {
          method: 'POST',
-         body: JSON.stringify({ post_title, post_content, post_rating, post_img }),
+         body: JSON.stringify({ post_title, post_content, post_rating }),
          headers: {
            'Content-Type': 'application/json',
          },
