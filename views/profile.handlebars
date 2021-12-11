@@ -46,37 +46,37 @@
 
 <div class="container-fluid">
 
-  <div class="row mx-auto mt-3">
-  <div class="col-xs-12 card">
-    <h3>Create a New Post:</h3>
+  <div class="row mx-auto mt-3 ">
+    <div class=" p-2 col-xs-12 card w-100">
+      <h3 class="my-3 ">Create a New Post:</h3>
 
-    <form class="form new-post-form">
-      <div class="form-group">
-        <label for="post-name">post name:</label>
-        <input class="form-input" type="text" id="post-name" name="post-name" />
-      </div>
+      <form class="form new-post-form">
+        <div class="form-group">
+          <label for="post-name" class="mb-1 text-capitalize">post name:</label>
+          <input class="form-input d-block profile-form-input w-50" type="text" id="post-name" name="post-name" />
+        </div>
       
-      <div class="form-group">
-        <label for="post-desc">description:</label>
-        <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
-      </div>
+        <div class="form-group mb-4">
+          <label for="post-desc" class="mb-1 text-capitalize ">description:</label>
+          <textarea class="form-input d-block profile-form-input w-75 h-50" id="post-desc" name="post-desc"></textarea>
+        </div>
 
-      <a id="hosted-link" target="_blank"></a>
-  <form>
-    <div class="form-group">
-      <input type="file" name="my-file">
-      <input type="text" name="my-description" placeholder="file description">
+        <a id="hosted-link" target="_blank"></a>
+        <form class="mb-3">
+          <div class="form-group mb-2">
+          <input type="file" name="my-file" class="mb-2">
+          <input type="text" name="my-description" placeholder="file description" class="profile-form-input mx-2">
 
-      <input type="submit" value="Upload" disabled>
-    </div>
+          <input type="submit" value="Upload" disabled>
+          </div>
 
-    {{!-- img tag for displaying file to upload --}}
-    <img id='img-preview'>
-  </form>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
+          {{!-- img tag for displaying file to upload --}}
+          <img id='img-preview' class="w-50 mb-5">
+        </form>
+        <div class="form-group mt-5 py-5">
+          <button type="submit" class="btn btn-primary mt-3">Create</button>
+        </div>
+      </form>
   </div>
 
 
