@@ -68,15 +68,28 @@
 </div>
           </div>
         </form>
+
+{{!-- ====================================================== --}}
+
 {{!-- adding multer to modal --}}
-        <form action="/stats" enctype="multipart/form-data" method="post">
+        {{!-- <form action="/api/images/upload" enctype="multipart/form-data" method="post"> --}}
+<form>
+
   <div class="form-group">
-    <input type="file" class="form-control-file" name="uploaded_file">
-          
+    <input type="file" class="form-control-file" name="my-file">
+    <input type="text" name="my-description" placeholder="file description">
+
+    <input type="submit" value="Upload" disabled>
   </div>
+    <a id="hosted-link" target="_blank"></a><br>
+    <img id='img-preview'>
+          
+
 </form>
 
+{{!-- ============================================================== --}}
 
+{{!-- submit/POST comment, can i also use this to upload the file to cloudinary and return the URL? Or, should I upload first in order to get the URL which then gets past to the post_img on the submit review btn --}}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Regret Review</button>
@@ -86,6 +99,7 @@
   </div>
 </div> 
 
-<script src="./js/reviewmodal.js"></script>
 <script src="./js/script.js"></script>
+<script src="./js/reviewmodal.js"></script>
+
 {{!-- <script src="./js/favorite.js"></script> --}}
