@@ -6,10 +6,43 @@
           
       </div>
 
+<div class="menu-container">
 
 
+<div class="container">
+   <div class="card-columns">
 
-<section>
+{{#each posts as |post|}}
+
+<div class="card straight-corner m-2 p-2 border-secondary" style="width: 18rem;">
+  <center>
+  <img src="{{post.post_img}}" class="card-img-top smaller-img" alt="{{post.post_title}}">
+  <div class="card-body m-0 p-0">
+    <hr>
+    <h5 class="card-title title-font">{{loud post.post_title}}</h5>
+    <p class="card-text post-main-font">Author: {{ post.user.username}}</p>
+        {{#donutTimes post_rating}}
+    <span>🍩</span>
+{{/donutTimes}}
+    <p class="post-main-font">Rating: {{post.post_rating}}/5</p>
+    <hr>
+  </div>
+  </center>
+  <div class="card-body p-0 m-0">
+
+<a href="/{{id}}"><button class="button-57 btn-block" role="button"><span class="text">read more...</span><span>donut miss out</span></button></a>
+    {{!-- <a href="/{{id}}" class="btn-link btn-block" role="button">View Discussion</a> --}}
+    {{!-- <button class="fav-button" data-favorite="{{id}}">Add to favorites</button> --}}
+  </div>
+</div>
+
+{{/each}}
+
+</div>
+</div>
+
+
+{{!-- <section>
   
 <div class="container-fluid p-3">  
   <div class="row mx-auto mt-3">
@@ -37,9 +70,9 @@
   </div>
 </div>
 
-</section>   
+</section>    --}}
 
-  {{#if posts.length}}
+  {{!-- {{#if posts.length}}
   <div class="col-md-5 ml-5 post-list card">
     <h3>Current posts:</h3>
 
@@ -56,7 +89,8 @@
     {{/each}}
   </div>
   {{/if}}
-</div>
+</div> --}}
+
 
 
   <footer>
