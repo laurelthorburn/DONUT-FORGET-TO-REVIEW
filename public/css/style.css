@@ -187,8 +187,7 @@ footer{
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
   width: 100%; /* Full-width */
-  height: 15px;
-  border-radius: 5px; 
+  height: 25px;
   background: #d3d3d3; /* Grey background */
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
@@ -205,37 +204,23 @@ footer{
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%; 
+  width: 23px;
+  height: 24px;
   border: 0;
-  background: rgb(204, 74, 95);
+  background: url(../media/donut-svg.svg);
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
+  width: 23px;
   height: 25px;
-  border-radius: 50%;
   border: 0;
-  background: rgb(204, 74, 95);
+  background: url(../media/donut-svg.svg);
   cursor: pointer;
 }
-
 .post-img {
   width: 20rem;
 }
-/* .card-columns {
-  column-count: 4 !important;
-} */
-
-/*-----profile design --*/
-
-.jumbotron {
-  background-image:url("./jumb.jpg") ; 
-  background-size: cover;
-  height: 50%;}
-
 
 /*-----My favorites --*/
 
