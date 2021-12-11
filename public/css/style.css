@@ -295,3 +295,24 @@ footer{
 .btn-block:hover{
   color: white;
 }
+
+/* MODAL STYLING */
+.modal-title{
+  font-family: 'Delius Unicase', cursive;
+}
+
+.modal-body{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.btn-accept{
+  background-color: #4cc9ff82;
+}
+
+.btn-decline{
+  background-color: rgba(175, 171, 171, 0.673);
+}
+
+.modal-header{
+  background-color: #4cc9ff40;
+}
