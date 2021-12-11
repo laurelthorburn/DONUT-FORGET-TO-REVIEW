@@ -2,39 +2,55 @@
 
 <div class="menu-container">
 
-<div class="card text-white bg-info w-50 mx-auto border-secondary m-3 ">
+<div class="container">
+   <div class="card-columns d-flex justify-content-center">
+
+
+<div class="card straight-corner m-2 p-2 border-secondary" style="width: 50rem;">
   <div class="card-body">
     <center><img src="{{post.post_img}}" alt="{{post.post_title}}" class="post-img"></img></center>
-    <h5 class="card-title">{{post.post_title}}</h5>
-        <p>Author: {{loud post.user.username}} Date: {{format_date post.createdAt}}</p>
-    <p class="card-text">{{post.post_content}}</p>
+    <hr>
+    <h5 class="card-title title-font">{{post.post_title}}</h5>
+        <p class="post-main-font">Author: {{loud post.user.username}} Date: {{format_date post.createdAt}} || Rating: {{post.post_rating}}/5</p> 
+        <hr>
+    <p class="card-text post-main-font">{{post.post_content}}</p>
+  </div>
+</div>
+</div>
+
+   <div class="card-columns d-flex justify-content-center">
+
+<div class="card straight-corner m-2 p-2 border-secondary" style="width: 50rem;">
+    <h3>Add a New Comment:</h3>
+
+    <form class="form new-comment-form">
+
+
+      <div class="form-group shadow-textarea">
+        <label for="comment-content"></label><br>
+        <textarea class="form-input form-control z-depth-1" id="comment-content" name="comment-content" placeholder="Be nice..."></textarea>
+      </div>
+
+      <div class="form-group mx-auto">
+        <button type="submit" class="btn btn-secondary">Add Comment</button>
+      </div>
+
+
+    </form>
   </div>
 </div>
 
 {{#each post.comments as |post|}}
 {{debug post}}
-<div class="card text-white bg-secondary w-50 mx-auto border-secondary m-3 ">
+   <div class="card-columns d-flex justify-content-center">
+
+<div class="card straight-corner m-2 p-2 border-secondary" style="width: 50rem;">
   <div class="card-body">
     <h5 class="card-title">{{loud user.username}} on {{format_date createdAt}}</h5>
     <p class="card-text">{{comment_content}}</p>
   </div>
 </div>
+</div>
 {{/each}}
-
-
-<div class="row mx-auto mt-3">
-  <div class="col-md-5 ml-5 mr-5 card mx-auto">
-    <h3>Add a New Comment:</h3>
-
-    <form class="form new-comment-form">
-      <div class="form-group">
-        <label for="comment-content">write a response:</label>
-        <textarea class="form-input" id="comment-content" name="comment-content"></textarea>
-      </div>
-      <div class="form-group mx-auto">
-        <button type="submit" class="btn btn-primary">Add</button>
-      </div>
-    </form>
-  </div>
 
 <script src="/js/comment.js"></script>

@@ -58,7 +58,8 @@ router.get("/dashboard", async (req, res) => {
 
     // Serialize data so the template can read it -- else you get a mass of information that is overwhelming and difficult to work with
     const posts = dbPostData.map((post) => post.get({ plain: true }));
-
+console.log("these are the current posts",
+posts)
     // Pass serialized data and session flag into template
     res.render("dashboard", {
       posts,
