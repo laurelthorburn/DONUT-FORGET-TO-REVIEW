@@ -1,5 +1,10 @@
+.menu-container{
+  background-color: greenyellow;
+}
 
-
+.container {
+  background-color: hotpink;
+}
 /* Main background color */
 html, body {
     height: 100%;
@@ -226,9 +231,9 @@ footer{
 .post-img {
   width: 20rem;
 }
-.card-columns {
-  column-count: 4;
-}
+/* .card-columns {
+  column-count: 4 !important;
+} */
 
 /*-----profile design --*/
 
