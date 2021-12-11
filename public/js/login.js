@@ -53,14 +53,7 @@ const loginFormHandler = async (event) => {
       document.getElementById("submit-btn").disabled = !cansubmit;
 
   };
-  
 
-
-
-
-
-  
- 
   
   document
     .querySelector('.login-form')

@@ -41,48 +41,6 @@ const newReviewButton = async (event) => {
      }
    };
 
-//  const delButtonHandler = async (event) => {
-//    console.log("HEY DED WE MAKE IT TO DELLLLLETE")
-//    console.log(event.target)
-//    if (event.target.hasAttribute('data-id')) {
-//      const id = event.target.getAttribute('data-id');
-//      console.log("delete id:",
-//      id)
- 
-//      const response = await fetch(`/api/posts/${id}`, {
-//        method: 'DELETE',
-//      });
- 
-//      if (response.ok) {
-//        document.location.replace('/profile');
-//      } else {
-//        alert('Failed to delete post');
-//      }
-//    }
-//  };
-
-
-
-const updateButtonHandler = async (event) => {
-  // event.preventDefault();
-  if (event.target.hasAttribute('data-update')) {
-    const id = event.target.getAttribute('data-update');
-  
-    postID = id;
-    console.log("update ID:",
-    id)
-  const response = await fetch(`/api/posts/${id}`);
-
-  const postResponse = await response.json(); //converts to readable data
-
-
-document.querySelector('#message-text').value = postResponse.post_content;
-document.querySelector('#recipient-name').value = postResponse.post_title;
-
-  return postResponse;
-  };
-};
-
 const sendUpdateButton = async (event) => {
   if (event.target.hasAttribute('data-put')) {
 
@@ -106,20 +64,28 @@ const post_title = document.querySelector('#recipient-name').value;
 };
 
 
-document
-.querySelector('#upload-btn')
-.addEventListener('click', newReviewButton);
- 
-//  document
-//    .querySelector('.new-post-form')
-//    .addEventListener('submit', newFormHandler);
-
 const handleButtonClick = async (event) => {
   if (event.target.getAttribute('data-button-type') == 'update') {
-    // do updates here
+
+      // event.preventDefault();
+      if (event.target.hasAttribute('data-update')) {
+        const id = event.target.getAttribute('data-update');
+      
+        postID = id;
+        console.log("update ID:",
+        id)
+      const response = await fetch(`/api/posts/${id}`);
+    
+      const postResponse = await response.json(); //converts to readable data
+    
+    
+    document.querySelector('#message-text').value = postResponse.post_content;
+    document.querySelector('#recipient-name').value = postResponse.post_title;
+    
+      return postResponse;
+      };
+
   } else if (event.target.getAttribute('data-button-type') == 'delete') {
-    console.log("HEY DED WE MAKE IT TO DELLLLLETE")
-    console.log(event.target)
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
       console.log("delete id:",
@@ -138,15 +104,12 @@ const handleButtonClick = async (event) => {
   }
 }
 
-document.querySelector('.post-list').addEventListener('click', handleButtonClick);
- 
-//  document
-//    .querySelector('.post-list')
-//    .addEventListener('click', delButtonHandler);
 
-//  document
-//    .querySelector('.post-list')
-//    .addEventListener('click', updateButtonHandler);
+document
+.querySelector('#upload-btn')
+.addEventListener('click', newReviewButton);
+ 
+document.querySelector('.post-list').addEventListener('click', handleButtonClick);
  
  document
    .querySelector('#update-button')
