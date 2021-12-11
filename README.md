@@ -25,7 +25,7 @@ Donut review site. Coming soon... donut be impatient.
 ## User Story
 ```
 AS A donut lover,
-I WANT a site where I can share my love for donuts with other donut enthusiasts by sharing reviews and photos, and filter through existing posts,
+I WANT a site where I can share my love for donuts with other donut enthusiasts by sharing reviews and photos.
 SO THAT I can grow my donut community.
 ```
 
