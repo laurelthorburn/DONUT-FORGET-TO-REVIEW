@@ -2,11 +2,11 @@
 
 <a name="descsection"></a>
 ## Description
-We 💗 donuts and we 💗 reviews, so why note combine the two?! The purpose of this site is to allow users to upload photos of their donut adventures, along with reviewing their findings. Users are able to comment on other people's posts in order to share their insight and share in the donut loving journey.
+We 💗 donuts and we 💗 reviews, so why not combine the two?! The purpose of this site is to allow users to upload photos of their donut adventures, along with reviewing their findings. Users are able to comment on other people's posts in order to provide their insight and share in the donut loving journey.
 
 Our site uses handlebars, nodeJS, multer, cloudinary and more in order to provide a seamless user experience.  The user is prompted to login or create an account in order to access posts and interact with the site.
 
-We loved creating this site and we hope you love your time eating and reviewing donuts. Donut wait, go get yourself a donut!
+We loved creating this site and we hope you love your time eating and reviewing donuts. Donut wait, go get yourself a donut now!
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
