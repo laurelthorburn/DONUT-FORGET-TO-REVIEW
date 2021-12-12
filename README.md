@@ -2,7 +2,11 @@
 
 <a name="descsection"></a>
 ## Description
-Donut review site. Coming soon... donut be impatient.
+We 💗 donuts and we 💗 reviews, so why note combine the two?! The purpose of this site is to allow users to upload photos of their donut adventures, along with reviewing their findings. Users are able to comment on other people's posts in order to share their insight and share in the donut loving journey.
+
+Our site uses handlebars, nodeJS, multer, cloudinary and more in order to provide a seamless user experience.  The user is prompted to login or create an account in order to access posts and interact with the site.
+
+We loved creating this site and we hope you love your time eating and reviewing donuts. Donut wait, go get yourself a donut!
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -25,33 +29,36 @@ Donut review site. Coming soon... donut be impatient.
 ## User Story
 ```
 AS A donut lover,
-I WANT a site where I can share my love for donuts with other donut enthusiasts by sharing reviews and photos.
+I WANT a site where I can share my love for donuts with other donut enthusiasts by sharing reviews and photos
 SO THAT I can grow my donut community.
 ```
 
 <a name="acceptancesection"></a>
 ## Acceptance Criteria
 ```
-Given as an unauthenticated user
+Given an unauthenticated user
 WHEN I arrive at the website
 THEN I am presented with two boxes, one shows slides of donuts and the other is a login box
-WHEN I don't have an account, I click "Join us"
-THEN I sign up for a username and password and click create a new account
-WHEN I have an account, I fill up the boxes with my authentication and click log in
+IF I don't have an account, I can click sign up and be routed the a "Join Us" page
+THEN I sign up by entering a unique username and password at least 8 characters and click create a new account
+WHEN I have an account, I login with my authentication
+IF I enter my login information, I am rerouted to the dashboard page, else I receive an error that my username or password is incorrect
 
-
-Given as an authenticated user
-WHEN I select login, I land to the main feed 
-THEN I am presented all post from all users
-THEN I am presented with a page that displays the website creators and their favorite donuts
+Given an authenticated user
+WHEN I select login, I am routed to the main feed/dashboard 
+THEN I am presented with all the posts from all users
 WHEN I click on add review 
-WHEN I click on WELCOME 
-THEN I can create a donut review with title, description, rating and upload a picture
-WHEN I click on PROFILE 
-THEN I am presented with all my posts that I can update or delete
-WHEN I click logout 
+THEN I am able to add a title, comment, rating, and upload an image and am rerouted to an updated feed that displays my review
+WHEN I click on 'User Profile' in the nav bar 
+THEN I am presented with all my posts that I can edit
+WHEN I click 'read more' button on either the dashboard or user profile
+THEN I am able to see more details about that post, including comments
+WHEN I click add a comment
+THEN I can enter a comment and on click I am rerouted to an updated page with my comment displayed at the bottom
+WHEN I click the 'Welcome' page in the nav bar
+THEN I am presented with a page that displays the website creators and their favorite donuts
+WHEN I click logout or am idle on the site for too long
 Then I am redirected to login page
-
 
 ```
 
