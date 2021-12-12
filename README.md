@@ -142,9 +142,9 @@ git push origin yourname-branch
 
   <a name="picsection"></a>
   ## Screenshots
-  ![Screenshot of homepage](./public/media/screenshot1.png)
-  ![Screenshot of dashboard](./public/media/screenshot2.png)
-  ![Screenshot of about us](./public/media/screenshot3.png)
+  ![Screenshot of homepage](./public/media/screenshot1.jpg)
+  ![Screenshot of dashboard](./public/media/screenshot2.jpg)
+  ![Screenshot of about us](./public/media/screenshot3.jpg)
 
   <a name="linksection"></a>
   ## Links
