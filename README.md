@@ -159,3 +159,14 @@ Resources/Credit
 * https://stackoverflow.com/questions/35133573/import-external-file-content-into-handlebar
 * https://stackoverflow.com/questions/43461718/bootstrap-4-center-just-two-cards-not-three-just-two
 * https://stackoverflow.com/questions/64906432/has-the-user-liked-the-post-before-or-not-using-sequelize
+* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto
+* https://stackoverflow.com/questions/18739937/how-to-keep-footer-at-bottom-of-screen
+* https://getcssscan.com/css-buttons-examples
+* https://www.w3schools.com/howto/howto_js_rangeslider.asp
+* https://stackoverflow.com/questions/53280738/join-in-sequelize
+* https://github.com/samuelfox1/cloudinary-sandbox
+* https://dev.to/alvarosaburido/use-custom-emoji-as-a-cursor-using-css-3j7
+* https://codepen.io/joebocock/pen/ZEWoMPb
+* https://www.npmjs.com/package/multer
+* https://medium.com/@joeokpus/uploading-images-to-cloudinary-using-multer-and-expressjs-f0b9a4e14c54
+* https://stackoverflow.com/questions/13645084/access-a-variable-outside-the-scope-of-a-handlebars-js-each-loop
