@@ -12,17 +12,12 @@ slider.oninput = function() {
 
 const newReviewButton = async (event) => {
     //  event.preventDefault();
-     console.log("This is a test. Do we make it here from the modal?");
    
      const post_title = document.querySelector('#post-name').value;
      const post_content = document.querySelector('#post-desc').value;
      const post_rating = slider.value;
      const post_img = cloudURL;
 
-     console.log("I am the img link of the post... maybe??: ",
-     "post-img:",
-     post_img, //works
-     "=======");
 
      if (post_title && post_content) { //do we want to force the user to upload an img?
        const response = await fetch(`/api/posts`, {
@@ -72,12 +67,13 @@ const handleButtonClick = async (event) => {
         const id = event.target.getAttribute('data-update');
       
         postID = id;
-        console.log("update ID:",
-        id)
+
       const response = await fetch(`/api/posts/${id}`);
     
       const postResponse = await response.json(); //converts to readable data
     
+      console.log("YOU NEED THIS:",
+      postResponse)
     
     document.querySelector('#message-text').value = postResponse.post_content;
     document.querySelector('#recipient-name').value = postResponse.post_title;
@@ -88,8 +84,6 @@ const handleButtonClick = async (event) => {
   } else if (event.target.getAttribute('data-button-type') == 'delete') {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
-      console.log("delete id:",
-      id)
   
       const response = await fetch(`/api/posts/${id}`, {
         method: 'DELETE',
