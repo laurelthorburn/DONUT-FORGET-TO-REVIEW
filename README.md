@@ -73,13 +73,13 @@ git clone https://github.com/laurelthorburn/DONUT-FORGET-TO-REVIEW.git
 ```
 npm init
 ```
-* Install dependencies (bcrypt, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, and sequelize) by opening the terminal (ctrl + j on windows) and running:
+* Install dependencies (bcrypt, cloudinary, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, multer and sequelize) by opening the terminal (ctrl + j on windows) and running:
 ```
 npm install
 ```
 OR each of the following:
 ```
-npm install bcrypt || npm install connect-session-sequelize ||  npm install dotenv || npm install express || npm install express-handlebars || npm install express-session || npm install mysql2 || npm install sequelize
+npm install bcrypt || npm install cloudinary || npm install connect-session-sequelize ||  npm install dotenv || npm install express || npm install express-handlebars || npm install express-session || npm install mysql2 || npm install multer || npm install sequelize
 ```
 
 <a name="usagesection"></a>
@@ -116,7 +116,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 1. [Fork the repo!](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
 2. Create a feature branch:
 ```
-git checkout -b yourname-branch
+git checkout -b your-branch-name-here
 ```
 3. Commit changes:
 ```
@@ -138,13 +138,13 @@ git push origin yourname-branch
   Questions/comments/concerns? Please send an email to:
   * Laurel: codinglaurel@gmail.com || [GitHub](https://github.com/laurelthorburn)
   * Mariana: marianahodniki1991@gmail.com || [GitHub](https://github.com/mhdavie)
-  * Florencia: || [GitHub](https://github.com/FlorenciaB94)
+  * Florencia: florenciawebdev@gmail.com || [GitHub](https://github.com/FlorenciaB94)
 
   <a name="picsection"></a>
   ## Screenshots
-  ![Screenshot of homepage](./public/media/screenshot2.png)
-  ![Screenshot of logging into blog](./public/media/screenshot1.png)
-  ![Screenshot of dashboard](./public/media/screenshot3.png)
+  ![Screenshot of homepage](./public/media/screenshot1.png)
+  ![Screenshot of dashboard](./public/media/screenshot2.png)
+  ![Screenshot of about us](./public/media/screenshot3.png)
 
   <a name="linksection"></a>
   ## Links
