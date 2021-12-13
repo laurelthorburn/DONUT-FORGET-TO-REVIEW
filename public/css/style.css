@@ -343,3 +343,8 @@ footer{
 .modal-header{
   background-color: #4cc9ff40;
 }
+
+#img-preview {
+  width: 250px;
+  height: auto;
+}
