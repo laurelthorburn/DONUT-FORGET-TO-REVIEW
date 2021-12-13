@@ -36,54 +36,11 @@ const newReviewButton = async (event) => {
      }
    };
 
-const sendUpdateButton = async (event) => {
-  if (event.target.hasAttribute('data-put')) {
-
-const post_content = document.querySelector('#message-text').value;
-const post_title = document.querySelector('#recipient-name').value;
-
-    const response = await fetch(`/api/posts/edit/${postID}`, {
-      method: 'PUT',
-      body: JSON.stringify({post_title, post_content}),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to send final post update');
-    }
-  }
-};
-
-
-const handleButtonClick = async (event) => {
-  if (event.target.getAttribute('data-button-type') == 'update') {
-
-      // event.preventDefault();
-      if (event.target.hasAttribute('data-update')) {
-        const id = event.target.getAttribute('data-update');
-      
-        postID = id;
-
-      const response = await fetch(`/api/posts/${id}`);
-    
-      const postResponse = await response.json(); //converts to readable data
-    
-      console.log("YOU NEED THIS:",
-      postResponse)
-    
-    document.querySelector('#message-text').value = postResponse.post_content;
-    document.querySelector('#recipient-name').value = postResponse.post_title;
-    
-      return postResponse;
-      };
-
-  } else if (event.target.getAttribute('data-button-type') == 'delete') {
+   const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
+      console.log("delete id:",
+      id)
   
       const response = await fetch(`/api/posts/${id}`, {
         method: 'DELETE',
@@ -94,17 +51,74 @@ const handleButtonClick = async (event) => {
       } else {
         alert('Failed to delete post');
       }
+      
     }
-  }
-}
+  };
+
+  // const updateButtonHandler = async (event) => {
+  //   // event.preventDefault();
+  //   console.log("Step 1: do we make it here?"); //yes
+  //   if (event.target.hasAttribute('data-update')) {
+
+  //     console.log("Step 2: do we make it here?"); //no
+
+  //     const id = event.target.getAttribute('data-update');
+    
+  //     postID = id;
+
+  //     console.log("update ID:",
+  //     id)
+
+  //   const response = await fetch(`/api/posts/${id}`);
+  
+  //   const postResponse = await response.json(); //converts to readable data
+  
+  // console.log("YOOOOOOOOOO==============",
+  // postResponse.post_content);
+  
+  // document.querySelector('#post-content-text').value = postResponse.post_content;
+  //   document.querySelector('#post-title-text').value = postResponse.post_title;
+    
+  //   return postResponse;
+  //   };
+  // };
+
+// const sendUpdateButton = async (event) => {
+//   if (event.target.hasAttribute('data-put')) {
+
+// const post_content = document.querySelector('#message-text').value;
+// const post_title = document.querySelector('#recipient-name').value;
+
+//     const response = await fetch(`/api/posts/edit/${postID}`, {
+//       method: 'PUT',
+//       body: JSON.stringify({post_title, post_content}),
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//     });
+
+//     if (response.ok) {
+//       document.location.replace('/profile');
+//     } else {
+//       alert('Failed to send final post update');
+//     }
+//   }
+// };
 
 
 document
 .querySelector('#upload-btn')
 .addEventListener('click', newReviewButton);
  
-document.querySelector('.post-list').addEventListener('click', handleButtonClick);
+document
+.querySelector('.post-list')
+.addEventListener('click', delButtonHandler);
+
+// document
+// .querySelector('.post-list')
+// .addEventListener('click', updateButtonHandler);
+
  
- document
-   .querySelector('#update-button')
-   .addEventListener('click', sendUpdateButton);
+//  document
+//    .querySelector('#update-button')
+//    .addEventListener('click', sendUpdateButton);
