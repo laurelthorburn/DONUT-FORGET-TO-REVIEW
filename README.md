@@ -2,7 +2,11 @@
 
 <a name="descsection"></a>
 ## Description
-Donut review site. Coming soon... donut be impatient.
+We 💗 donuts and we 💗 reviews, so why not combine the two?! The purpose of this site is to allow users to upload photos of their donut adventures, along with reviewing their findings. Users are able to comment on other people's posts in order to provide their insight and share in the donut loving journey.
+
+Our site uses handlebars, nodeJS, multer, cloudinary and more in order to provide a seamless user experience.  The user is prompted to login or create an account in order to access posts and interact with the site.
+
+We loved creating this site and we hope you love your time eating and reviewing donuts. Donut wait, go get yourself a donut now!
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -25,33 +29,36 @@ Donut review site. Coming soon... donut be impatient.
 ## User Story
 ```
 AS A donut lover,
-I WANT a site where I can share my love for donuts with other donut enthusiasts by sharing reviews and photos, and filter through existing posts,
+I WANT a site where I can share my love for donuts with other donut enthusiasts by sharing reviews and photos
 SO THAT I can grow my donut community.
 ```
 
 <a name="acceptancesection"></a>
 ## Acceptance Criteria
 ```
-Given as an unauthenticated user
+Given an unauthenticated user
 WHEN I arrive at the website
 THEN I am presented with two boxes, one shows slides of donuts and the other is a login box
-WHEN I don't have an account, I click "Join us"
-THEN I sign up for a username and password and click create a new account
-WHEN I have an account, I fill up the boxes with my authentication and click log in
+IF I don't have an account, I can click sign up and be routed the a "Join Us" page
+THEN I sign up by entering a unique username and password at least 8 characters and click create a new account
+WHEN I have an account, I login with my authentication
+IF I enter my login information, I am rerouted to the dashboard page, else I receive an error that my username or password is incorrect
 
-
-Given as an authenticated user
-WHEN I select login, I land to the main feed 
-THEN I am presented all post from all users
-THEN I am presented with a page that displays the website creators and their favorite donuts
+Given an authenticated user
+WHEN I select login, I am routed to the main feed/dashboard 
+THEN I am presented with all the posts from all users
 WHEN I click on add review 
-WHEN I click on WELCOME 
-THEN I can create a donut review with title, description, rating and upload a picture
-WHEN I click on PROFILE 
-THEN I am presented with all my posts that I can update or delete
-WHEN I click logout 
+THEN I am able to add a title, comment, rating, and upload an image and am rerouted to an updated feed that displays my review
+WHEN I click on 'User Profile' in the nav bar 
+THEN I am presented with all my posts that I can edit
+WHEN I click 'read more' button on either the dashboard or user profile
+THEN I am able to see more details about that post, including comments
+WHEN I click add a comment
+THEN I can enter a comment and on click I am rerouted to an updated page with my comment displayed at the bottom
+WHEN I click the 'Welcome' page in the nav bar
+THEN I am presented with a page that displays the website creators and their favorite donuts
+WHEN I click logout or am idle on the site for too long
 Then I am redirected to login page
-
 
 ```
 
@@ -66,13 +73,13 @@ git clone https://github.com/laurelthorburn/DONUT-FORGET-TO-REVIEW.git
 ```
 npm init
 ```
-* Install dependencies (bcrypt, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, and sequelize) by opening the terminal (ctrl + j on windows) and running:
+* Install dependencies (bcrypt, cloudinary, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, multer and sequelize) by opening the terminal (ctrl + j on windows) and running:
 ```
 npm install
 ```
 OR each of the following:
 ```
-npm install bcrypt || npm install connect-session-sequelize ||  npm install dotenv || npm install express || npm install express-handlebars || npm install express-session || npm install mysql2 || npm install sequelize
+npm install bcrypt || npm install cloudinary || npm install connect-session-sequelize ||  npm install dotenv || npm install express || npm install express-handlebars || npm install express-session || npm install mysql2 || npm install multer || npm install sequelize
 ```
 
 <a name="usagesection"></a>
@@ -109,7 +116,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 1. [Fork the repo!](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
 2. Create a feature branch:
 ```
-git checkout -b yourname-branch
+git checkout -b your-branch-name-here
 ```
 3. Commit changes:
 ```
@@ -131,13 +138,13 @@ git push origin yourname-branch
   Questions/comments/concerns? Please send an email to:
   * Laurel: codinglaurel@gmail.com || [GitHub](https://github.com/laurelthorburn)
   * Mariana: marianahodniki1991@gmail.com || [GitHub](https://github.com/mhdavie)
-  * Florencia: || [GitHub](https://github.com/FlorenciaB94)
+  * Florencia: florenciawebdev@gmail.com || [GitHub](https://github.com/FlorenciaB94)
 
   <a name="picsection"></a>
   ## Screenshots
-  ![Screenshot of homepage](./public/media/screenshot2.png)
-  ![Screenshot of logging into blog](./public/media/screenshot1.png)
-  ![Screenshot of dashboard](./public/media/screenshot3.png)
+  ![Screenshot of homepage](./public/media/screenshot1.jpg)
+  ![Screenshot of dashboard](./public/media/screenshot2.jpg)
+  ![Screenshot of about us](./public/media/screenshot3.jpg)
 
   <a name="linksection"></a>
   ## Links
@@ -152,3 +159,14 @@ Resources/Credit
 * https://stackoverflow.com/questions/35133573/import-external-file-content-into-handlebar
 * https://stackoverflow.com/questions/43461718/bootstrap-4-center-just-two-cards-not-three-just-two
 * https://stackoverflow.com/questions/64906432/has-the-user-liked-the-post-before-or-not-using-sequelize
+* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto
+* https://stackoverflow.com/questions/18739937/how-to-keep-footer-at-bottom-of-screen
+* https://getcssscan.com/css-buttons-examples
+* https://www.w3schools.com/howto/howto_js_rangeslider.asp
+* https://stackoverflow.com/questions/53280738/join-in-sequelize
+* https://github.com/samuelfox1/cloudinary-sandbox
+* https://dev.to/alvarosaburido/use-custom-emoji-as-a-cursor-using-css-3j7
+* https://codepen.io/joebocock/pen/ZEWoMPb
+* https://www.npmjs.com/package/multer
+* https://medium.com/@joeokpus/uploading-images-to-cloudinary-using-multer-and-expressjs-f0b9a4e14c54
+* https://stackoverflow.com/questions/13645084/access-a-variable-outside-the-scope-of-a-handlebars-js-each-loop
