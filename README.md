@@ -13,54 +13,15 @@ We loved creating this site and we hope you love your time eating and reviewing 
 
 ## Table of Contents
 1. [ Description. ](#descsection)
-2. [ User Story. ](#usersection)
-3. [ Acceptance Criteria. ](#acceptancesection)
-4. [ Installation. ](#installsection)
-5. [ Usage. ](#usagesection)
-6. [ License. ](#licensesection)
-7. [ Contributing. ](#contribsection)
-8. [ Tests. ](#testsection)
-9. [ Questions. ](#questionssection)
-10. [ Screenshots. ](#picsection)
-11. [ Links. ](#linksection)
-12. [ Resources/Credit. ](#creditsection)
-
-<a name="usersection"></a>
-## User Story
-```
-AS A donut lover,
-I WANT a site where I can share my love for donuts with other donut enthusiasts by sharing reviews and photos
-SO THAT I can grow my donut community.
-```
-
-<a name="acceptancesection"></a>
-## Acceptance Criteria
-```
-Given an unauthenticated user
-WHEN I arrive at the website
-THEN I am presented with two boxes, one shows slides of donuts and the other is a login box
-IF I don't have an account, I can click sign up and be routed the a "Join Us" page
-THEN I sign up by entering a unique username and password at least 8 characters and click create a new account
-WHEN I have an account, I login with my authentication
-IF I enter my login information, I am rerouted to the dashboard page, else I receive an error that my username or password is incorrect
-
-Given an authenticated user
-WHEN I select login, I am routed to the main feed/dashboard 
-THEN I am presented with all the posts from all users
-WHEN I click on add review 
-THEN I am able to add a title, comment, rating, and upload an image and am rerouted to an updated feed that displays my review
-WHEN I click on 'User Profile' in the nav bar 
-THEN I am presented with all my posts that I can edit
-WHEN I click 'read more' button on either the dashboard or user profile
-THEN I am able to see more details about that post, including comments
-WHEN I click add a comment
-THEN I can enter a comment and on click I am rerouted to an updated page with my comment displayed at the bottom
-WHEN I click the 'Welcome' page in the nav bar
-THEN I am presented with a page that displays the website creators and their favorite donuts
-WHEN I click logout or am idle on the site for too long
-Then I am redirected to login page
-
-```
+2. [ Installation. ](#installsection)
+3. [ Usage. ](#usagesection)
+4. [ License. ](#licensesection)
+5. [ Contributing. ](#contribsection)
+6. [ Tests. ](#testsection)
+7. [ Questions. ](#questionssection)
+8. [ Screenshots. ](#picsection)
+9. [ Links. ](#linksection)
+10. [ Resources/Credit. ](#creditsection)
 
 <a name="installsection"></a>
 ## Installation
